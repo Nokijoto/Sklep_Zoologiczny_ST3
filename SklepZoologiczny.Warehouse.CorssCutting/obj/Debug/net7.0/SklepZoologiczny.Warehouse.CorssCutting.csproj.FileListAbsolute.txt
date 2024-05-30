@@ -1,0 +1,12 @@
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\bin\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.deps.json
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\bin\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\bin\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.pdb
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.GeneratedMSBuildEditorConfig.editorconfig
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.AssemblyInfoInputs.cache
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.AssemblyInfo.cs
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.csproj.CoreCompileInputs.cache
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.sourcelink.json
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\refint\SklepZoologiczny.Warehouse.CorssCutting.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\SklepZoologiczny.Warehouse.CorssCutting.pdb
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.CorssCutting\obj\Debug\net7.0\ref\SklepZoologiczny.Warehouse.CorssCutting.dll

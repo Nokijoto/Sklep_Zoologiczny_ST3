@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Common.Sto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Common.CrossCutting", "SklepZoologiczny.Common.CrossCutting\SklepZoologiczny.Common.CrossCutting.csproj", "{A3EE450F-CD88-4E71-A558-A3F8861B6043}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Warehouse", "SklepZoologiczny.Warehouse\SklepZoologiczny.Warehouse.csproj", "{25919030-CE26-4906-A024-4B4BB815ED96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Warehouse.Storage", "SklepZoologiczny.Warehouse.Storage\SklepZoologiczny.Warehouse.Storage.csproj", "{E96C2E49-24E0-4020-8064-91F251699AE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Warehouse.CorssCutting", "SklepZoologiczny.Warehouse.CorssCutting\SklepZoologiczny.Warehouse.CorssCutting.csproj", "{AF006D78-341C-41C1-9837-89DE3F05E840}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +31,18 @@ Global
 		{A3EE450F-CD88-4E71-A558-A3F8861B6043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3EE450F-CD88-4E71-A558-A3F8861B6043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3EE450F-CD88-4E71-A558-A3F8861B6043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25919030-CE26-4906-A024-4B4BB815ED96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25919030-CE26-4906-A024-4B4BB815ED96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25919030-CE26-4906-A024-4B4BB815ED96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25919030-CE26-4906-A024-4B4BB815ED96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E96C2E49-24E0-4020-8064-91F251699AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E96C2E49-24E0-4020-8064-91F251699AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96C2E49-24E0-4020-8064-91F251699AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E96C2E49-24E0-4020-8064-91F251699AE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF006D78-341C-41C1-9837-89DE3F05E840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF006D78-341C-41C1-9837-89DE3F05E840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF006D78-341C-41C1-9837-89DE3F05E840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF006D78-341C-41C1-9837-89DE3F05E840}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +50,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{40D5E741-46F6-479E-8743-386D58C87694} = {7B3D07EA-97DD-4EA5-B675-A9DEF8BFFD92}
 		{A3EE450F-CD88-4E71-A558-A3F8861B6043} = {7B3D07EA-97DD-4EA5-B675-A9DEF8BFFD92}
+		{25919030-CE26-4906-A024-4B4BB815ED96} = {94E05070-9BC1-423C-BD16-EEC566161F36}
+		{E96C2E49-24E0-4020-8064-91F251699AE4} = {94E05070-9BC1-423C-BD16-EEC566161F36}
+		{AF006D78-341C-41C1-9837-89DE3F05E840} = {94E05070-9BC1-423C-BD16-EEC566161F36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F429D31-545E-428F-9073-EBECE5602584}

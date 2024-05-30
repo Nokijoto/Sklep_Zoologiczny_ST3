@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\SklepZoologiczny.Warehouse.props" />
+</Project>
