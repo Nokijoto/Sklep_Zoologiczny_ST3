@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "woVaDI+/mcM5MI45MXx1g79ltKmnd5p3pwwm71O9DHM9xRzcLh3WdhSnHc1q4ZdiZqMVjTInLqtU9aWldPQwRg==",
+  "dgSpecHash": "wplHlWJKse7ulDkb6z9DZ19a7xPiN5tA0SxLAAdAwQcRnzdEZ6pH+6tZjPYiqo/T3eJ64p3T4ATry6Vidyy6Aw==",
   "success": true,
-  "projectFilePath": "E:\\Programowanie\\C#\\SklepZoologiczny\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj",
+  "projectFilePath": "M:\\Uczelnia\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

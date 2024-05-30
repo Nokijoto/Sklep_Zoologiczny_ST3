@@ -1,0 +1,12 @@
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\bin\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.deps.json
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\bin\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\bin\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.pdb
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.AssemblyInfoInputs.cache
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.AssemblyInfo.cs
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.csproj.CoreCompileInputs.cache
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.sourcelink.json
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\refint\SklepZoologiczny.Common.CrossCutting.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Common.CrossCutting.pdb
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.CrossCutting\obj\Debug\net7.0\ref\SklepZoologiczny.Common.CrossCutting.dll

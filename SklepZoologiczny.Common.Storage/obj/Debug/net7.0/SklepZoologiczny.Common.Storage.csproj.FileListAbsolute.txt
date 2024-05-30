@@ -1,0 +1,12 @@
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\bin\Debug\net7.0\SklepZoologiczny.Common.Storage.deps.json
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\bin\Debug\net7.0\SklepZoologiczny.Common.Storage.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\bin\Debug\net7.0\SklepZoologiczny.Common.Storage.pdb
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\SklepZoologiczny.Common.Storage.GeneratedMSBuildEditorConfig.editorconfig
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\SklepZoologiczny.Common.Storage.AssemblyInfoInputs.cache
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\SklepZoologiczny.Common.Storage.AssemblyInfo.cs
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\SklepZoologiczny.Common.Storage.csproj.CoreCompileInputs.cache
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\SklepZoologiczny.Common.Storage.sourcelink.json
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\SklepZoologiczny.Common.Storage.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\refint\SklepZoologiczny.Common.Storage.dll
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\SklepZoologiczny.Common.Storage.pdb
+M:\Uczelnia\Sklep_Zoologiczny_ST3\SklepZoologiczny.Common.Storage\obj\Debug\net7.0\ref\SklepZoologiczny.Common.Storage.dll
