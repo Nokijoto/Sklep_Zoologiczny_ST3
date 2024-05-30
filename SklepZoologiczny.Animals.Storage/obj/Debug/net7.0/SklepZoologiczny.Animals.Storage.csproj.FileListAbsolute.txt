@@ -1,0 +1,16 @@
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/bin/Debug/net7.0/SklepZoologiczny.Animals.Storage.deps.json
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/bin/Debug/net7.0/SklepZoologiczny.Animals.Storage.dll
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/bin/Debug/net7.0/SklepZoologiczny.Animals.Storage.pdb
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/bin/Debug/net7.0/SklepZoologiczny.Common.Storage.dll
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/bin/Debug/net7.0/SklepZoologiczny.Common.Storage.pdb
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.csproj.AssemblyReference.cache
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.GeneratedMSBuildEditorConfig.editorconfig
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.AssemblyInfoInputs.cache
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.AssemblyInfo.cs
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.csproj.CoreCompileInputs.cache
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.sourcelink.json
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoo.DE50E8F5.Up2Date
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.dll
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/refint/SklepZoologiczny.Animals.Storage.dll
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/SklepZoologiczny.Animals.Storage.pdb
+/Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Animals.Storage/obj/Debug/net7.0/ref/SklepZoologiczny.Animals.Storage.dll
