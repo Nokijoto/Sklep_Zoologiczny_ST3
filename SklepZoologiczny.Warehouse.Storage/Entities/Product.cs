@@ -12,8 +12,8 @@ namespace SklepZoologiczny.Warehouse.Storage.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public string Category { get; set; }    
-        public string Quanitity { get; set; }   
-        public decimal Price {get; set; }
+        public string Quantity { get; set; }   
+        public int Price {get; set; }
         public string Supplier { get; set; }
        
     }
