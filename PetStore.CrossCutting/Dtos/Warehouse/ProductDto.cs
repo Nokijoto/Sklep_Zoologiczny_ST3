@@ -15,7 +15,8 @@ namespace PetStore.CrossCutting.Dtos.Warehouse
         public string Quantity { get; set; }
 
         public int Price { get; set; }
-
+        public Guid ExternalId { get; set; }
+        public string ExternalSourceName { get; set; }
 
     }
 }

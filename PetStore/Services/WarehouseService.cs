@@ -50,6 +50,15 @@ namespace PetStore.Services
 
         }
 
+
+        protected  async Task OnBeforeRecordCreatedAsync(PetStoreDbContext dbContext, Product entity)
+        {
+            if (entity.Id != null)
+            {
+                await _dataResolver.ResolveFor(entity.Id);
+            }
+        }
+
         public Task<CategoriesDto> GetCategoryByIdAsync(Guid id)
         {
             throw new NotImplementedException();
