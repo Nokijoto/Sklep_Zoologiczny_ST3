@@ -16,3 +16,5 @@ C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.Stor
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.Storage\obj\Debug\net7.0\PetStore.Storage.pdb
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.Storage\obj\Debug\net7.0\PetStore.Storage.genruntimeconfig.cache
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.Storage\obj\Debug\net7.0\ref\PetStore.Storage.dll
+C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.Storage\bin\Debug\net7.0\PetStore.CrossCutting.dll
+C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.Storage\bin\Debug\net7.0\PetStore.CrossCutting.pdb

@@ -93,6 +93,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\PetStore.CrossCutting\\PetStore.CrossCutting.csproj": {
+                "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\PetStore.CrossCutting\\PetStore.CrossCutting.csproj"
+              },
               "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\SklepZoologiczny.Common.Storage.csproj": {
                 "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\SklepZoologiczny.Common.Storage.csproj"
               }

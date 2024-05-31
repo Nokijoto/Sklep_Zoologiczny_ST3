@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetStore.CrossCutting.Dtos.Warehouse;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace PetStore.Storage
 
         public DbSet<Entities.Animals.Animal> Animals { get; set; }
         public DbSet<Entities.Animals.Specie> Species { get; set; }
+        public DbSet<ProductDto> ProductDto { get; set; } = default!;
 
-           
     }
 }

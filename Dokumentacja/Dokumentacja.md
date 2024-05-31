@@ -15,7 +15,6 @@ System zarządzania zwierzętami i magazynem składający się z dwóch mikroser
     - Monitorowanie stanu magazynu oraz przeglądanie szczegółów dotyczących produktów.
 
 ## 2. Opis Wybranego Stosu Technologicznego
-
 - **Backend**:
     - **Język programowania**: C#
     - **Framework**: ASP.NET Core do tworzenia API, Entity Framework Core do ORM
@@ -46,9 +45,10 @@ System zarządzania zwierzętami i magazynem składający się z dwóch mikroser
 
 ### Animals:
 
+![Diagram Bazy Danych](Resources/Diagram_Bazy_Animals.png)
 
 ### Warehouse:
-
+![Diagram Bazy Danych](Resources/Diagram_Bazy_Warehouse.png)
 
 ## 5. Diagram UML / Przypadków Użycia
 
