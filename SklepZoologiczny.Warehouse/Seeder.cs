@@ -47,49 +47,115 @@ namespace SklepZoologiczny.Warehouse
             }
         }
 
-        private object[] GetProducts()
+        private IEnumerable<Product> GetProducts()
         {
-            throw new NotImplementedException();
+            return new List<Product>()
+    {
+        new Product()
+        {
+            Id = Guid.NewGuid(),
+            Name = "TestProduct",
+            Description = "TestDescription",
+            Price = 100,
+        }
+    };
         }
 
         private IEnumerable<Categorie> GetCategories()
         {
             return new List<Categorie>()
+    {
+        new Categorie()
+        {
+            Id = Guid.NewGuid(),
+            Name = "TestCategory",
+            Description = "TestCategoryDescription",
+            ParentCategory = null,
+            ParentCategoryId = null,
+            Subcategories= new List<Categorie>
             {
-                
-            };
+                new Categorie()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "SubCategory1",
+                    Description = "SubCategoryDescription1",
+                    ParentCategory = null,
+                    ParentCategoryId = null,
+                    Subcategories = new List<Categorie>(),
+                }
+            },
+            Products = new List<Product>(),
+        }
+    };
         }
 
-        private object GetTransactions()
+        private IEnumerable<InventoryTransaction> GetTransactions()
         {
-            throw new NotImplementedException();
+            return new List<InventoryTransaction>()
+    {
+        new InventoryTransaction()
+        {
+            Id = Guid.NewGuid(),
+            Employee = new Employee()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Jan Kowalski",
+                ContactInformation = "jan.kowalski@example.com",
+                InventoryTransactions = new List<InventoryTransaction>()
+            },
+            Product = new Product()
+            {
+                Id = Guid.NewGuid(),
+                Name = "TestProduct",
+                Description = "TestDescription",
+                Price = 100
+            },
+            Quantity = 1,
+            EmployeeId = Guid.NewGuid(),
+            ProductId = Guid.NewGuid(),
+        }
+    };
         }
 
-        private object[] GetSuppliers()
+        private IEnumerable<Supplier> GetSuppliers()
         {
-            throw new NotImplementedException();
+            return new List<Supplier>()
+    {
+        new Supplier()
+        {
+            City = "Warszawa",
+            Name = "Supplier1",
+            Country = "Poland",
+            Street = "Testowa 1",
+            Email = "supplier1@example.com",
+            Id = Guid.NewGuid(),
+            Phone = "123456789",
+            Products = new List<Product>(),
+            State = "Mazowieckie",
+            ZipCode = "00-000",
+        }
+    };
         }
 
         private IEnumerable<Employee> GetEmployees()
         {
             return new List<Employee>
-            {
-                new Employee()
-                {
-                    Id = new Guid(),
-                    Name = "Jan Kowalski",
-                },
-                new Employee()
-                {
-                    Id = new Guid(),
-                    Name = "Anna Nowak",
-                },
-                new Employee()
-                {
-                    Id = new Guid(),
-                    Name = "Piotr Wiśniewski",
-                }
-            };
+    {
+        new Employee()
+        {
+            Id = Guid.NewGuid(),
+            Name = "Jan Kowalski",
+            ContactInformation = "jan.kowalski@example.com",
+            InventoryTransactions = new List<InventoryTransaction>(),
+        },
+        new Employee()
+        {
+            Id = Guid.NewGuid(),
+            Name = "Jan Nowak",
+            ContactInformation = "jan.nowak@example.com",
+            InventoryTransactions = new List<InventoryTransaction>(),
+        }
+    };
         }
     }
 }

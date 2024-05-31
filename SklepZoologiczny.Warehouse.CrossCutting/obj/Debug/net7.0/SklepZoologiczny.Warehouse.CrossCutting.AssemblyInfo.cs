@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SklepZoologiczny.Warehouse.CrossCutting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+080c0ba36fcc796aa0da267d14dfccef2a30bcbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("SklepZoologiczny.Warehouse.CrossCutting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SklepZoologiczny.Warehouse.CrossCutting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

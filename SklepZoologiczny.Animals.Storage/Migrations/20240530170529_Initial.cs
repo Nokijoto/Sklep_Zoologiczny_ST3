@@ -33,7 +33,7 @@ namespace SklepZoologiczny.Animals.Storage.Migrations
                     Age = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    SpecieId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    SpecieId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +42,8 @@ namespace SklepZoologiczny.Animals.Storage.Migrations
                         name: "FK_Animals_Species_SpecieId",
                         column: x => x.SpecieId,
                         principalTable: "Species",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

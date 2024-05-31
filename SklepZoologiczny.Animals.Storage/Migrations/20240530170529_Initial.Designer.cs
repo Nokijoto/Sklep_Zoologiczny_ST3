@@ -12,7 +12,7 @@ using SklepZoologiczny.Animals.Storage;
 namespace SklepZoologiczny.Animals.Storage.Migrations
 {
     [DbContext(typeof(AnimalsDbContext))]
-    [Migration("20240530134131_Initial")]
+    [Migration("20240530170529_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -49,7 +49,7 @@ namespace SklepZoologiczny.Animals.Storage.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("SpecieId")
+                    b.Property<Guid>("SpecieId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -78,7 +78,9 @@ namespace SklepZoologiczny.Animals.Storage.Migrations
                 {
                     b.HasOne("SklepZoologiczny.Animals.Storage.Entity.Specie", "Specie")
                         .WithMany("Animals")
-                        .HasForeignKey("SpecieId");
+                        .HasForeignKey("SpecieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Specie");
                 });

@@ -7,7 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.16"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.20">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.20" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.20">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
@@ -15,6 +25,11 @@
       <Folder Include="Controllers\" />
       <Folder Include="Interface\" />
       <Folder Include="Service\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SklepZoologiczny.Animals.CrossCutting\SklepZoologiczny.Animals.CrossCutting.csproj" />
+      <ProjectReference Include="..\SklepZoologiczny.Animals.Storage\SklepZoologiczny.Animals.Storage.csproj" />
     </ItemGroup>
 
 </Project>

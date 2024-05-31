@@ -16,7 +16,10 @@ namespace SklepZoologiczny.Warehouse.CrossCutting.Dtos
         public string Description { get; set; }
         [Required]
         public string Category { get; set; }
- 
+
+        public string Quantity { get; set; }
+
+        public int Price { get; set; }
 
 
     }
