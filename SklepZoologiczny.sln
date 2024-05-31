@@ -3,19 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Warehouse", "SklepZoologiczny.Magazyn\SklepZoologiczny.Warehouse.csproj", "{AD8B7AAB-8768-45BF-A202-A779109D067D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Warehouse", "Warehouse", "{94E05070-9BC1-423C-BD16-EEC566161F36}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{7B3D07EA-97DD-4EA5-B675-A9DEF8BFFD92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Common.Storage", "SklepZoologiczny.Common.Storage\SklepZoologiczny.Common.Storage.csproj", "{40D5E741-46F6-479E-8743-386D58C87694}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Common.Storage", "SklepZoologiczny.Common.Storage\SklepZoologiczny.Common.Storage.csproj", "{40D5E741-46F6-479E-8743-386D58C87694}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Common.CrossCutting", "SklepZoologiczny.Common.CrossCutting\SklepZoologiczny.Common.CrossCutting.csproj", "{A3EE450F-CD88-4E71-A558-A3F8861B6043}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Common.CrossCutting", "SklepZoologiczny.Common.CrossCutting\SklepZoologiczny.Common.CrossCutting.csproj", "{A3EE450F-CD88-4E71-A558-A3F8861B6043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Warehouse.CrossCutting", "SklepZoologiczny.Warehouse.CrossCutting\SklepZoologiczny.Warehouse.CrossCutting.csproj", "{6A6F74E2-510D-4C1C-B86D-F913DDA45A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Warehouse.CrossCutting", "SklepZoologiczny.Warehouse.CrossCutting\SklepZoologiczny.Warehouse.CrossCutting.csproj", "{6A6F74E2-510D-4C1C-B86D-F913DDA45A8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepZoologiczny.Warehouse.Storage", "SklepZoologiczny.Warehouse.Storage\SklepZoologiczny.Warehouse.Storage.csproj", "{D2D2C6CE-163E-4492-B44E-6F0BD5D4273D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Warehouse.Storage", "SklepZoologiczny.Warehouse.Storage\SklepZoologiczny.Warehouse.Storage.csproj", "{D2D2C6CE-163E-4492-B44E-6F0BD5D4273D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Animals", "Animals", "{36C3789D-B1E2-4C1F-B3A7-DC1AB120C91A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Animals", "SklepZoologiczny.Animals\SklepZoologiczny.Animals.csproj", "{FC14B334-E978-4C91-ADD1-545C2C6F0E32}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Animals.Storage", "SklepZoologiczny.Animals.Storage\SklepZoologiczny.Animals.Storage.csproj", "{FC99E096-A853-4951-A506-EBDFD3640F1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Animals.CrossCutting", "SklepZoologiczny.Animals.CrossCutting\SklepZoologiczny.Animals.CrossCutting.csproj", "{9135A0D7-789F-4A6D-87F8-50E910725945}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SklepZoologiczny.Warehouse", "SklepZoologiczny.Warehouse\SklepZoologiczny.Warehouse.csproj", "{0BBD2C08-1D8D-4023-AA33-60585D5AB911}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PetStore", "PetStore", "{E8BB4470-7B51-4111-866F-025DA99B10BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore", "PetStore\PetStore.csproj", "{5CF00211-9316-45BF-B0B6-B048866EEDF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testy", "Testy", "{C72F4371-331E-493C-9F52-F7B9744BFB78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Warehouse", "Test.Warehouse\Test.Warehouse.csproj", "{9EE14645-4FBA-4D80-8C96-0EB5F701134F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.CrossCutting", "PetStore.CrossCutting\PetStore.CrossCutting.csproj", "{86B4038C-A686-41D8-9A93-785C18E11DA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Storage", "PetStore.Storage\PetStore.Storage.csproj", "{81FA3DC4-0924-451A-AE86-6501540CA82C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +43,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AD8B7AAB-8768-45BF-A202-A779109D067D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD8B7AAB-8768-45BF-A202-A779109D067D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD8B7AAB-8768-45BF-A202-A779109D067D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD8B7AAB-8768-45BF-A202-A779109D067D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{40D5E741-46F6-479E-8743-386D58C87694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{40D5E741-46F6-479E-8743-386D58C87694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40D5E741-46F6-479E-8743-386D58C87694}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,16 +59,55 @@ Global
 		{D2D2C6CE-163E-4492-B44E-6F0BD5D4273D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2D2C6CE-163E-4492-B44E-6F0BD5D4273D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2D2C6CE-163E-4492-B44E-6F0BD5D4273D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC14B334-E978-4C91-ADD1-545C2C6F0E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC14B334-E978-4C91-ADD1-545C2C6F0E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC14B334-E978-4C91-ADD1-545C2C6F0E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC14B334-E978-4C91-ADD1-545C2C6F0E32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC99E096-A853-4951-A506-EBDFD3640F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC99E096-A853-4951-A506-EBDFD3640F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC99E096-A853-4951-A506-EBDFD3640F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC99E096-A853-4951-A506-EBDFD3640F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9135A0D7-789F-4A6D-87F8-50E910725945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9135A0D7-789F-4A6D-87F8-50E910725945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9135A0D7-789F-4A6D-87F8-50E910725945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9135A0D7-789F-4A6D-87F8-50E910725945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBD2C08-1D8D-4023-AA33-60585D5AB911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBD2C08-1D8D-4023-AA33-60585D5AB911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBD2C08-1D8D-4023-AA33-60585D5AB911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBD2C08-1D8D-4023-AA33-60585D5AB911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF00211-9316-45BF-B0B6-B048866EEDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF00211-9316-45BF-B0B6-B048866EEDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF00211-9316-45BF-B0B6-B048866EEDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF00211-9316-45BF-B0B6-B048866EEDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE14645-4FBA-4D80-8C96-0EB5F701134F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE14645-4FBA-4D80-8C96-0EB5F701134F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE14645-4FBA-4D80-8C96-0EB5F701134F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE14645-4FBA-4D80-8C96-0EB5F701134F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B4038C-A686-41D8-9A93-785C18E11DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B4038C-A686-41D8-9A93-785C18E11DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B4038C-A686-41D8-9A93-785C18E11DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B4038C-A686-41D8-9A93-785C18E11DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81FA3DC4-0924-451A-AE86-6501540CA82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FA3DC4-0924-451A-AE86-6501540CA82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FA3DC4-0924-451A-AE86-6501540CA82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FA3DC4-0924-451A-AE86-6501540CA82C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{AD8B7AAB-8768-45BF-A202-A779109D067D} = {94E05070-9BC1-423C-BD16-EEC566161F36}
 		{40D5E741-46F6-479E-8743-386D58C87694} = {7B3D07EA-97DD-4EA5-B675-A9DEF8BFFD92}
 		{A3EE450F-CD88-4E71-A558-A3F8861B6043} = {7B3D07EA-97DD-4EA5-B675-A9DEF8BFFD92}
 		{6A6F74E2-510D-4C1C-B86D-F913DDA45A8A} = {94E05070-9BC1-423C-BD16-EEC566161F36}
 		{D2D2C6CE-163E-4492-B44E-6F0BD5D4273D} = {94E05070-9BC1-423C-BD16-EEC566161F36}
+		{FC14B334-E978-4C91-ADD1-545C2C6F0E32} = {36C3789D-B1E2-4C1F-B3A7-DC1AB120C91A}
+		{FC99E096-A853-4951-A506-EBDFD3640F1A} = {36C3789D-B1E2-4C1F-B3A7-DC1AB120C91A}
+		{9135A0D7-789F-4A6D-87F8-50E910725945} = {36C3789D-B1E2-4C1F-B3A7-DC1AB120C91A}
+		{0BBD2C08-1D8D-4023-AA33-60585D5AB911} = {94E05070-9BC1-423C-BD16-EEC566161F36}
+		{5CF00211-9316-45BF-B0B6-B048866EEDF4} = {E8BB4470-7B51-4111-866F-025DA99B10BE}
+		{9EE14645-4FBA-4D80-8C96-0EB5F701134F} = {C72F4371-331E-493C-9F52-F7B9744BFB78}
+		{86B4038C-A686-41D8-9A93-785C18E11DA9} = {E8BB4470-7B51-4111-866F-025DA99B10BE}
+		{81FA3DC4-0924-451A-AE86-6501540CA82C} = {E8BB4470-7B51-4111-866F-025DA99B10BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F429D31-545E-428F-9073-EBECE5602584}
