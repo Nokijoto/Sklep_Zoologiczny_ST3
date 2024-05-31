@@ -33,9 +33,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testy", "Testy", "{C72F4371
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Warehouse", "Test.Warehouse\Test.Warehouse.csproj", "{9EE14645-4FBA-4D80-8C96-0EB5F701134F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.CrossCutting", "PetStore.CrossCutting\PetStore.CrossCutting.csproj", "{86B4038C-A686-41D8-9A93-785C18E11DA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.CrossCutting", "PetStore.CrossCutting\PetStore.CrossCutting.csproj", "{86B4038C-A686-41D8-9A93-785C18E11DA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Storage", "PetStore.Storage\PetStore.Storage.csproj", "{81FA3DC4-0924-451A-AE86-6501540CA82C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetStore.Storage", "PetStore.Storage\PetStore.Storage.csproj", "{81FA3DC4-0924-451A-AE86-6501540CA82C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

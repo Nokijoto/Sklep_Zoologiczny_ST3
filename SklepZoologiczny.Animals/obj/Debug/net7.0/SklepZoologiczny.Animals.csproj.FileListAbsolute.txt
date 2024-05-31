@@ -167,3 +167,4 @@ C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologic
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals\obj\Debug\net7.0\SklepZoologiczny.Animals.pdb
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals\obj\Debug\net7.0\SklepZoologiczny.Animals.genruntimeconfig.cache
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals\obj\Debug\net7.0\ref\SklepZoologiczny.Animals.dll
+C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

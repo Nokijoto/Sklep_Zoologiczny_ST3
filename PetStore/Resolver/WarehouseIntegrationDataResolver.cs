@@ -4,14 +4,13 @@ using Newtonsoft.Json;
 using PetStore.CrossCutting.Dtos.Warehouse;
 using PetStore.Storage;
 using PetStore.Storage.Entities.Warehouse;
-using SklepZoologiczny.Animals.CrossCutting.Dtos;
 using System.Drawing.Printing;
 using System.Net.Http.Headers;
 using static System.Net.WebRequestMethods;
 
 namespace PetStore.Resolver
 {
-    public class WarehouseIntegrationDataResolver
+    public class WarehouseIntegrationDataResolver 
     {
         private readonly PetStoreDbContext _dbContext;
         private readonly string apiUrl = "https://localhost:7032/api/";
@@ -19,17 +18,7 @@ namespace PetStore.Resolver
         {
             _dbContext = dbContext;
         }
-
-        public void Resolve()
-        {
-            // Resolve data from external warehouse system
-        }
-
-        public async Task ResolveAsync()
-        {
-            // Resolve data from external warehouse system
-        }
-
+        
         public async Task ResolveFor(Guid guid)
         {
             var exist = await _dbContext.Products.AnyAsync(x => x.Id == guid);
@@ -43,7 +32,6 @@ namespace PetStore.Resolver
 
         private async Task<ProductDto> ResolveFromExternalWarehouse(Guid guid)
         {
-            // Resolve data from external warehouse system
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(apiUrl);
@@ -62,11 +50,13 @@ namespace PetStore.Resolver
             }
         }
         
-        private async Task<ProductDto> CreateOrUpdateProducts(ProductDto dto)
+        private async Task<Product> CreateOrUpdateProducts(ProductDto dto)
         {
-            var product = new ProductDto
+            var product = new Product
             {
-                Id = dto.Id,
+                ExternalId = dto.Id,
+                ExternalSourceName = "Warehouse",
+                Id = Guid.NewGuid(),
                 Name = dto.Name,
                 Description = dto.Description,
                 Category = dto.Category,
@@ -74,7 +64,7 @@ namespace PetStore.Resolver
                 Price = dto.Price
             };
 
-        
+            _dbContext.Products.Add(product);
             return product;
         }
     }

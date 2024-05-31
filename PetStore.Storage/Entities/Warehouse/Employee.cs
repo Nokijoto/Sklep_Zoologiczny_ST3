@@ -15,5 +15,8 @@ namespace PetStore.Storage.Entities.Warehouse
 
         public ICollection<InventoryTransaction> InventoryTransactions { get; set; }
 
+
+        public Guid ExternalId { get; set; }
+        public string ExternalSourceName { get; set; }
     }
 }

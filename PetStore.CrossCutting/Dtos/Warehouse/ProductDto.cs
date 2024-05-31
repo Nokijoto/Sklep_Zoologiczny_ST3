@@ -2,7 +2,7 @@
 
 namespace PetStore.CrossCutting.Dtos.Warehouse
 {
-    public class ProductDto
+    public class ProductDto 
     {
         public Guid Id { get; set; }
         [Required]

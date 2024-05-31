@@ -24,5 +24,7 @@ namespace PetStore.Storage.Entities.Warehouse
         [Required]
         public DateTime TransactionDate { get; set; }
 
+        public Guid ExternalId { get; set; }
+        public string ExternalSourceName { get; set; }
     }
 }

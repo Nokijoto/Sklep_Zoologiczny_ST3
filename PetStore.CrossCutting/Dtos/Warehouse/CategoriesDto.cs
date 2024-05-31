@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetStore.CrossCutting.Dtos.Warehouse
 {
-    public class CategoriesDto
+    public class CategoriesDto : ExternalSource
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }

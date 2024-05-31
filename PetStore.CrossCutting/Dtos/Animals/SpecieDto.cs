@@ -1,5 +1,4 @@
-namespace SklepZoologiczny.Animals.CrossCutting.Dtos;
-
+namespace PetStore.CrossCutting.Dtos.Animals;
 public class SpecieDto
 {
     public Guid Id { get; set; }

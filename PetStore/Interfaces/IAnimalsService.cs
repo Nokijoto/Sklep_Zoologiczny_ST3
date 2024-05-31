@@ -1,4 +1,4 @@
-﻿using SklepZoologiczny.Animals.CrossCutting.Dtos;
+﻿using PetStore.CrossCutting.Dtos.Animals;
 
 namespace PetStore.Interfaces
 {

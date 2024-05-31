@@ -1,10 +1,11 @@
-﻿using PetStore.Interfaces;
-using SklepZoologiczny.Animals.CrossCutting.Dtos;
+﻿using PetStore.CrossCutting.Dtos.Animals;
+using PetStore.Interfaces;
 
 namespace PetStore.Services
 {
-    public class AnimalService : IAnimalsService
+    public class AnimalsService : IAnimalsService
     {
+
         public Task<AnimalDto> GetAnimalByIdAsync(Guid id)
         {
             throw new NotImplementedException();

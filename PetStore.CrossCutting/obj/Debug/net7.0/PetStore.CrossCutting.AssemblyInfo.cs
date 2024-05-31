@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PetStore.CrossCutting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e533575a5f8880761e2b8ba2d65608aaad4a9b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38efd52c90ab6b50e83920dce28425dc6284a798")]
 [assembly: System.Reflection.AssemblyProductAttribute("PetStore.CrossCutting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PetStore.CrossCutting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
