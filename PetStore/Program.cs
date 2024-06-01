@@ -3,11 +3,21 @@ using PetStore.Interfaces;
 using PetStore.Resolver;
 using PetStore.Services;
 using PetStore.Storage;
+using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<WarehouseIntegrationDataResolver>();
+builder.Services.AddScoped<SpecieIntegrationDataResolver>();
+
 builder.Services.AddScoped<IWarehouseService,WarehouseService>();
 builder.Services.AddScoped<IAnimalsService, AnimalsService>();
+
+builder.Services.AddHttpClient<AnimalsService>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5149/Species");
+    client.DefaultRequestHeaders.Accept.Clear();
+    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

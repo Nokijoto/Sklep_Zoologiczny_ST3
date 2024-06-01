@@ -12,7 +12,7 @@ namespace PetStore.Interfaces
 
 
         Task<SpecieDto> GetSpeciesAsync();
-        Task<SpecieDto> GetSpecieByIdAsync(Guid id);
+        Task<SpecieDto> GetSpecielByIdAsync(Guid id);
         Task<SpecieDto> GetSpecieByName(string name);
     }
 }

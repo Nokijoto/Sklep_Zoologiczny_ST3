@@ -10,3 +10,15 @@ C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.Cros
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\refint\PetStore.CrossCutting.dll
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.pdb
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\ref\PetStore.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\bin\Debug\net7.0\PetStore.CrossCutting.deps.json
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\bin\Debug\net7.0\PetStore.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\bin\Debug\net7.0\PetStore.CrossCutting.pdb
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.AssemblyInfo.cs
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.sourcelink.json
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\refint\PetStore.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\PetStore.CrossCutting.pdb
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\PetStore.CrossCutting\obj\Debug\net7.0\ref\PetStore.CrossCutting.dll

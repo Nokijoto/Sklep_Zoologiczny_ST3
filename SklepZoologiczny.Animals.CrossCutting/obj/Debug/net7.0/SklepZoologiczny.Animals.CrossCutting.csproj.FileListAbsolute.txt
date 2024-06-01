@@ -22,3 +22,15 @@ C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologic
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\refint\SklepZoologiczny.Animals.CrossCutting.dll
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.pdb
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\ref\SklepZoologiczny.Animals.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\bin\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.deps.json
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\bin\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\bin\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.pdb
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.AssemblyInfo.cs
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.sourcelink.json
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\refint\SklepZoologiczny.Animals.CrossCutting.dll
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\SklepZoologiczny.Animals.CrossCutting.pdb
+C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Animals.CrossCutting\obj\Debug\net7.0\ref\SklepZoologiczny.Animals.CrossCutting.dll

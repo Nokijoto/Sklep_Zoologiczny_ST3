@@ -1,10 +1,16 @@
 ﻿using PetStore.CrossCutting.Dtos.Animals;
 using PetStore.Interfaces;
+using PetStore.Resolver;
 
 namespace PetStore.Services
 {
     public class AnimalsService : IAnimalsService
     {
+        private readonly SpecieIntegrationDataResolver _resolver;
+        public AnimalsService(SpecieIntegrationDataResolver resolver)
+        {
+            _resolver = resolver;
+        }
 
         public Task<AnimalDto> GetAnimalByIdAsync(Guid id)
         {
@@ -31,9 +37,9 @@ namespace PetStore.Services
             throw new NotImplementedException();
         }
 
-        public Task<SpecieDto> GetSpecieByIdAsync(Guid id)
+        public async Task<SpecieDto> GetSpecielByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _resolver.GetSpeciesAsync(id);
         }
 
         public Task<SpecieDto> GetSpecieByName(string name)

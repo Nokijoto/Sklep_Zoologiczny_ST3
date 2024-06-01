@@ -3479,23 +3479,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rexma\\.nuget\\packages\\": {},
+    "C:\\Users\\Konzo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse\\SklepZoologiczny.Warehouse.csproj",
+      "projectUniqueName": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse\\SklepZoologiczny.Warehouse.csproj",
       "projectName": "SklepZoologiczny.Warehouse",
-      "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse\\SklepZoologiczny.Warehouse.csproj",
-      "packagesPath": "C:\\Users\\Rexma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse\\obj\\",
+      "projectPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse\\SklepZoologiczny.Warehouse.csproj",
+      "packagesPath": "C:\\Users\\Konzo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rexma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Konzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3511,11 +3511,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.CrossCutting\\SklepZoologiczny.Warehouse.CrossCutting.csproj": {
-              "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.CrossCutting\\SklepZoologiczny.Warehouse.CrossCutting.csproj"
+            "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.CrossCutting\\SklepZoologiczny.Warehouse.CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.CrossCutting\\SklepZoologiczny.Warehouse.CrossCutting.csproj"
             },
-            "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.Storage\\SklepZoologiczny.Warehouse.Storage.csproj": {
-              "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.Storage\\SklepZoologiczny.Warehouse.Storage.csproj"
+            "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.Storage\\SklepZoologiczny.Warehouse.Storage.csproj": {
+              "projectPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.Storage\\SklepZoologiczny.Warehouse.Storage.csproj"
             }
           }
         }
@@ -3524,6 +3524,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3574,7 +3579,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
