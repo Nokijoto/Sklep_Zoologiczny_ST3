@@ -37,6 +37,43 @@ namespace PetStore.Storage.Migrations
                     b.ToTable("CategorieProduct");
                 });
 
+            modelBuilder.Entity("PetStore.CrossCutting.Dtos.Warehouse.ProductDto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ExternalId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ExternalSourceName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Quantity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductDto");
+                });
+
             modelBuilder.Entity("PetStore.Storage.Entities.Animals.Animal", b =>
                 {
                     b.Property<Guid>("Id")

@@ -1,55 +1,66 @@
-﻿using PetStore.CrossCutting.Dtos.Animals;
+﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.EntityFrameworkCore;
+using PetStore.CrossCutting.Dtos.Animals;
 using PetStore.Interfaces;
 using PetStore.Resolver;
+using PetStore.Storage;
 
 namespace PetStore.Services
 {
     public class AnimalsService : IAnimalsService
     {
         private readonly SpecieIntegrationDataResolver _resolver;
-        public AnimalsService(SpecieIntegrationDataResolver resolver)
+        private readonly PetStoreDbContext _dbContext;
+        private readonly AnimalIntegrationDataResolver _animalResolver;
+        public AnimalsService(SpecieIntegrationDataResolver resolver, PetStoreDbContext dbContext, AnimalIntegrationDataResolver animalResolver)
         {
             _resolver = resolver;
+            _dbContext = dbContext;
+            _animalResolver=animalResolver;
         }
 
-        public Task<AnimalDto> GetAnimalByIdAsync(Guid id)
+        public async Task<AnimalDto> GetAllAnimalsAsync(Guid id)
         {
-            throw new NotImplementedException();
+            if(_dbContext.Species.FirstOrDefault(x => x.Id == id) is null)
+            {
+                return await _animalResolver.GetAnimalAsync(id);
+            }
+            return new AnimalDto();
+            
         }
 
-        public Task<AnimalDto> GetAnimalBySpecieIdAsync(Guid id)
+        public async Task<AnimalDto> GetAnimalByIdAsync(Guid specieId, Guid id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<AnimalDto> GetAnimalsAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<AnimalDto> GetAnimalsByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<AnimalDto> GetAnimalsBySpecieName(string name)
-        {
-            throw new NotImplementedException();
+            var animalById= await _dbContext.Animals.FirstOrDefaultAsync(x => x.Id == id && x.SpecieId==specieId);
+            if (animalById is not null)
+            {
+                return new AnimalDto
+                {
+                    Id = animalById.Id,
+                    Name = animalById.Name,
+                    Breed = animalById.Breed
+                };
+            }
+            return await _animalResolver.GetAnimalByIdAsync(specieId, id);
         }
 
         public async Task<SpecieDto> GetSpecielByIdAsync(Guid id)
         {
-            return await _resolver.GetSpeciesAsync(id);
+            var specielById= await _dbContext.Species.FirstOrDefaultAsync(x => x.Id == id);
+            if (specielById is not null)
+            {
+                return new SpecieDto
+                {
+                    Id = specielById.Id,
+                    Name = specielById.Name
+                };
+            }
+            return await _resolver.GetSpeciesByIdAsync(id);
         }
 
-        public Task<SpecieDto> GetSpecieByName(string name)
+        public async Task<SpecieDto> GetSpeciesAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<SpecieDto> GetSpeciesAsync()
-        {
-            throw new NotImplementedException();
+            return await _resolver.GetAllSpeciesAsync();
         }
     }
 }
