@@ -13,41 +13,33 @@ namespace PetStore.Resolver
     public class WarehouseIntegrationDataResolver 
     {
         private readonly PetStoreDbContext _dbContext;
-        private readonly string apiUrl = "https://localhost:7032/api/";
-        public WarehouseIntegrationDataResolver(PetStoreDbContext dbContext)
+        private readonly HttpClient _httpClient;
+        private const string EXTERNAL_API_BASE_URL = "https://localhost:7032/api";
+        public WarehouseIntegrationDataResolver(PetStoreDbContext dbContext, HttpClient httpClient)
         {
             _dbContext = dbContext;
+            _httpClient = httpClient;
         }
         
-        public async Task ResolveFor(Guid guid)
+        public async Task<ProductDto> GetAllProductAsync()
         {
-            var exist = await _dbContext.Products.AnyAsync(x => x.Id == guid);
-            if (exist)
+            var externalApiUrl = $"{EXTERNAL_API_BASE_URL}/products";
+            var response = await _httpClient.GetAsync(externalApiUrl);
+            if (response.IsSuccessStatusCode)
             {
-                var productDto = await ResolveFromExternalWarehouse(guid);
-                await CreateOrUpdateProducts(productDto);
+                var products = JsonConvert.DeserializeObject<List<ProductDto>>(await response.Content.ReadAsStringAsync());
+                foreach (var product in products)
+                {
+                    if (_dbContext.Products.FirstOrDefault(x => x.ExternalId == product.Id) is null)
+                    {
+                        await CreateOrUpdateProducts(product);
+                    }
+                }
             }
-
-        }
-
-        private async Task<ProductDto> ResolveFromExternalWarehouse(Guid guid)
-        {
-            using (var client = new HttpClient())
+            return new ProductDto()
             {
-                client.BaseAddress = new Uri(apiUrl);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = await client.GetAsync("products");
-
-                string responseData = await response.Content.ReadAsStringAsync();
-
-                List<ProductDto> countries = JsonConvert.DeserializeObject<List<ProductDto>>(responseData);
-
-                return countries.FirstOrDefault(x => x.Id == guid);
-
-
-            }
+                Name = externalApiUrl.ToString()
+            };
         }
         
         private async Task<Product> CreateOrUpdateProducts(ProductDto dto)
@@ -55,8 +47,8 @@ namespace PetStore.Resolver
             var product = new Product
             {
                 ExternalId = dto.Id,
-                ExternalSourceName = "Warehouse",
-                Id = Guid.NewGuid(),
+                ExternalSourceName = "Product",
+                Id = dto.Id,
                 Name = dto.Name,
                 Description = dto.Description,
                 Category = dto.Category,
@@ -65,6 +57,7 @@ namespace PetStore.Resolver
             };
 
             _dbContext.Products.Add(product);
+            _dbContext.SaveChanges();
             return product;
         }
     }

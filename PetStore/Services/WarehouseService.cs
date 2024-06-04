@@ -18,46 +18,26 @@ namespace PetStore.Services
             _dbContext = dbContext;
         }
 
-       
-
 
         public Task<List<CategoriesDto>> GetAllCategoriesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<ProductDto>> GetAllProductsAsync()
+        public async Task<List<ProductDto>> GetAllProductsAsync()
         {
-            if (_dbContext.Products != null)
+             await _dataResolver.GetAllProductAsync();
+            return _dbContext.Products.Select(p => new ProductDto
             {
-                var products = _dbContext.Products.ToList();
-                var productDtos = new List<ProductDto>();
-                foreach (var product in products)
-                {
-                    productDtos.Add(new ProductDto
-                    {
-                        Id = product.Id,
-                        Name = product.Name,
-                        Description = product.Description,
-                        Category = product.Category,
-                        Quantity = product.Quantity,
-                        Price = product.Price
-                    });
-                }
-                return Task.FromResult(productDtos);
-            };
-            return Task.FromResult(new List<ProductDto>());
-
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description,
+                Category = p.Category,
+                Quantity = p.Quantity,
+                Price = p.Price
+            }).ToList();
         }
 
-
-        protected  async Task OnBeforeRecordCreatedAsync(PetStoreDbContext dbContext, Product entity)
-        {
-            if (entity.Id != null)
-            {
-                await _dataResolver.ResolveFor(entity.Id);
-            }
-        }
 
         public Task<CategoriesDto> GetCategoryByIdAsync(Guid id)
         {
@@ -85,10 +65,7 @@ namespace PetStore.Services
             return Task.FromResult(new ProductDto());
         }
 
-        public Task<ProductDto> GetProductByNameAsync(string name)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public Task<List<ProductDto>> GetProductsByCategoryAsync(Guid categoryId)
         {
@@ -96,11 +73,6 @@ namespace PetStore.Services
         }
 
         public Task<SupplierDto> GetSupplierByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<SupplierDto> GetSupplierByNameAsync(string name)
         {
             throw new NotImplementedException();
         }

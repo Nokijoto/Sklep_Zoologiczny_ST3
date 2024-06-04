@@ -18,6 +18,12 @@ builder.Services.AddHttpClient<AnimalsService>(client =>
     client.DefaultRequestHeaders.Accept.Clear();
     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 });
+builder.Services.AddHttpClient<WarehouseService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7032");
+    client.DefaultRequestHeaders.Accept.Clear();
+    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+});
 
 
 // Add services to the container.

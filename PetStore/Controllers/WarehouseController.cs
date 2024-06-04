@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PetStore.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api")]
     public class WarehouseController : Controller
     {
         private readonly IWarehouseService _warehouseService;
@@ -19,24 +19,24 @@ namespace PetStore.Controllers
         }
 
         // Action to return a view
-        [HttpGet]
-        [Route("/Warehouse/Index")]
-        public async Task<IActionResult> Index()
-        {
-            var categories = await _warehouseService.GetAllCategoriesAsync();
-            var products = await _warehouseService.GetAllProductsAsync();
-            var suppliers = await _warehouseService.GetSuppliersAsync();
+        //[HttpGet]
+        //[Route("/Warehouse/Index")]
+        //public async Task<IActionResult> Index()
+        //{
+        //    var categories = await _warehouseService.GetAllCategoriesAsync();
+        //    var products = await _warehouseService.GetAllProductsAsync();
+        //    var suppliers = await _warehouseService.GetSuppliersAsync();
 
-            // Create a view model or pass the data directly to the view
-            var viewModel = new WarehouseViewModel
-            {
-                Categories = categories,
-                Products = products,
-                Suppliers = suppliers
-            };
+        //    // Create a view model or pass the data directly to the view
+        //    var viewModel = new WarehouseViewModel
+        //    {
+        //        Categories = categories,
+        //        Products = products,
+        //        Suppliers = suppliers
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
 
         // Get all categories
         [HttpGet("categories")]
@@ -78,18 +78,6 @@ namespace PetStore.Controllers
             return Ok(product);
         }
 
-        // Get product by name
-        [HttpGet("products/byname/{name}")]
-        public async Task<ActionResult<ProductDto>> GetProductByName(string name)
-        {
-            var product = await _warehouseService.GetProductByNameAsync(name);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return Ok(product);
-        }
-
         // Get products by category ID
         [HttpGet("products/bycategory/{categoryId:guid}")]
         public async Task<ActionResult<List<ProductDto>>> GetProductsByCategory(Guid categoryId)
@@ -117,25 +105,5 @@ namespace PetStore.Controllers
             }
             return Ok(supplier);
         }
-
-        // Get supplier by name
-        [HttpGet("suppliers/byname/{name}")]
-        public async Task<ActionResult<SupplierDto>> GetSupplierByName(string name)
-        {
-            var supplier = await _warehouseService.GetSupplierByNameAsync(name);
-            if (supplier == null)
-            {
-                return NotFound();
-            }
-            return Ok(supplier);
-        }
-    }
-
-    // View model class
-    public class WarehouseViewModel
-    {
-        public List<CategoriesDto> Categories { get; set; }
-        public List<ProductDto> Products { get; set; }
-        public List<SupplierDto> Suppliers { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Operations;
 using Microsoft.EntityFrameworkCore;
 using PetStore.CrossCutting.Dtos.Animals;
 using PetStore.Interfaces;
@@ -19,14 +20,21 @@ namespace PetStore.Services
             _animalResolver=animalResolver;
         }
 
-        public async Task<AnimalDto> GetAllAnimalsAsync(Guid id)
+        public async Task<ICollection<AnimalDto>> GetAllAnimalsAsync(Guid id)
         {
-            if(_dbContext.Species.FirstOrDefault(x => x.Id == id) is null)
+            if(_dbContext.Species.FirstOrDefault(x => x.Id == id) is null) // do poprawy nalezy go poprawić tak żeby sprawdzał czy wszystkie wartości są już w bazie danych
             {
-                return await _animalResolver.GetAnimalAsync(id);
+                await _animalResolver.GetAnimalAsync(id);
             }
-            return new AnimalDto();
-            
+            var animals = await _dbContext.Animals.Where(x => x.SpecieId == id).ToListAsync();
+
+            return animals.Select(animal => new AnimalDto
+            {
+                Id = animal.Id,
+                Name = animal.Name,
+                Breed = animal.Breed,
+                Age = animal.Age
+            }).ToList();
         }
 
         public async Task<AnimalDto> GetAnimalByIdAsync(Guid specieId, Guid id)
@@ -38,7 +46,10 @@ namespace PetStore.Services
                 {
                     Id = animalById.Id,
                     Name = animalById.Name,
-                    Breed = animalById.Breed
+                    Breed = animalById.Breed,
+                    Age=animalById.Age,
+                    Gender=animalById.Gender,
+                    Price=animalById.Price                    
                 };
             }
             return await _animalResolver.GetAnimalByIdAsync(specieId, id);
@@ -58,9 +69,15 @@ namespace PetStore.Services
             return await _resolver.GetSpeciesByIdAsync(id);
         }
 
-        public async Task<SpecieDto> GetSpeciesAsync()
+        public async Task<IEnumerable<SpecieDto>> GetSpeciesAsync()
         {
-            return await _resolver.GetAllSpeciesAsync();
+            await _resolver.GetAllSpeciesAsync();
+            var species = await _dbContext.Species.ToListAsync();
+            return species.Select(x => new SpecieDto
+            {
+                Id = x.Id,
+                Name = x.Name
+            });
         }
     }
 }

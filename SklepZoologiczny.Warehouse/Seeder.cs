@@ -22,12 +22,12 @@ namespace SklepZoologiczny.Warehouse
                     _context.AddRange(employes);
                     _context.SaveChanges();
                 }
-                if(!_context.Suppliers.Any())
-                {
-                    var suppliers = GetSuppliers();
-                    _context.AddRange(suppliers);
-                    _context.SaveChanges();
-                }
+                //if(!_context.Suppliers.Any())
+                //{
+                //    var suppliers = GetSuppliers();
+                //    _context.AddRange(suppliers);
+                //    _context.SaveChanges();
+                //}
                 if (!_context.InventoryTransactions.Any())
                 {
                     var transactions = GetTransactions();
@@ -38,12 +38,12 @@ namespace SklepZoologiczny.Warehouse
                     _context.AddRange(categories);
                     _context.SaveChanges();
                 }
-                if(!_context.Products.Any())
-                {
-                    var products = GetProducts();
-                    _context.AddRange(products);
-                    _context.SaveChanges();
-                }
+                //if(!_context.Products.Any())
+                //{
+                //    var products = GetProducts();
+                //    _context.AddRange(products);
+                //    _context.SaveChanges();
+                //}
             }
         }
 

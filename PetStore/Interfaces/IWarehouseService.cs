@@ -11,12 +11,10 @@ namespace PetStore.Interfaces
 
         public Task<List<ProductDto>> GetAllProductsAsync();
         public Task<ProductDto> GetProductByIdAsync(Guid id);
-        public Task<ProductDto> GetProductByNameAsync(string name);
         public Task<List<ProductDto>> GetProductsByCategoryAsync(Guid categoryId);
 
         public Task<List<SupplierDto>> GetSuppliersAsync();
         public Task<SupplierDto> GetSupplierByIdAsync(Guid id);
-        public Task<SupplierDto> GetSupplierByNameAsync(string name);
 
 
     }
