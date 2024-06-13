@@ -12,7 +12,7 @@ namespace PetStore.CrossCutting.Dtos.Warehouse
         [Required]
         public string Category { get; set; }
 
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
 
         public int Price { get; set; }
         public Guid ExternalId { get; set; }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetStore.Storage.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,21 +30,6 @@ namespace PetStore.Storage.Migrations
                         column: x => x.ParentCategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Employees",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    ContactInformation = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    ExternalId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ExternalSourceName = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Employees", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -144,35 +129,6 @@ namespace PetStore.Storage.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "InventoryTransactions",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EmployeeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ExternalId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ExternalSourceName = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InventoryTransactions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_InventoryTransactions_Employees_EmployeeId",
-                        column: x => x.EmployeeId,
-                        principalTable: "Employees",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_InventoryTransactions_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Animals",
                 columns: table => new
                 {
@@ -182,7 +138,7 @@ namespace PetStore.Storage.Migrations
                     Age = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    SpecieId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    SpecieId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     ExternalId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ExternalSourceName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -193,8 +149,7 @@ namespace PetStore.Storage.Migrations
                         name: "FK_Animals_Species_SpecieId",
                         column: x => x.SpecieId,
                         principalTable: "Species",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -237,16 +192,6 @@ namespace PetStore.Storage.Migrations
                 column: "ParentCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InventoryTransactions_EmployeeId",
-                table: "InventoryTransactions",
-                column: "EmployeeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_InventoryTransactions_ProductId",
-                table: "InventoryTransactions",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProductSupplier_SuppliersId",
                 table: "ProductSupplier",
                 column: "SuppliersId");
@@ -262,9 +207,6 @@ namespace PetStore.Storage.Migrations
                 name: "CategorieProduct");
 
             migrationBuilder.DropTable(
-                name: "InventoryTransactions");
-
-            migrationBuilder.DropTable(
                 name: "ProductDto");
 
             migrationBuilder.DropTable(
@@ -275,9 +217,6 @@ namespace PetStore.Storage.Migrations
 
             migrationBuilder.DropTable(
                 name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "Employees");
 
             migrationBuilder.DropTable(
                 name: "Products");

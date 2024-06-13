@@ -12,7 +12,7 @@ using SklepZoologiczny.Warehouse.Storage;
 namespace SklepZoologiczny.Warehouse.Storage.Migrations
 {
     [DbContext(typeof(WarehouseDbContext))]
-    [Migration("20240613200120_init")]
+    [Migration("20240613203948_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -55,9 +55,8 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("CategorieId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -67,9 +66,6 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ParentId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
@@ -77,16 +73,12 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Supplier")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("SupplierId")
+                    b.Property<Guid>("SupplierId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParentId");
+                    b.HasIndex("CategorieId");
 
                     b.HasIndex("SupplierId");
 
@@ -155,13 +147,21 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
 
             modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Product", b =>
                 {
-                    b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Categorie", null)
+                    b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Categorie", "Categorie")
                         .WithMany("Products")
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("CategorieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Supplier", null)
+                    b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Supplier", "Supplier")
                         .WithMany("Products")
-                        .HasForeignKey("SupplierId");
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Categorie");
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Categorie", b =>

@@ -11,7 +11,8 @@ namespace PetStore.Resolver
         private readonly PetStoreDbContext _dbContext;
         private readonly HttpClient _httpClient;
         private const string EXTERNAL_API_BASE_URL = "http://localhost:5149/api/species";
-
+        //TO DO: MOVE DB CONN TO SERVICE
+        // HERE ONLY GETTING DATA FROM EXTERNAL API
         public AnimalIntegrationDataResolver(PetStoreDbContext dbContext, HttpClient httpClient)
         {
             _dbContext = dbContext;

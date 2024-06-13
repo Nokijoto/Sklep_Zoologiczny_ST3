@@ -46,7 +46,6 @@ namespace SklepZoologiczny.Warehouse.Services
             }
 
             product.Name = updatedProduct.Name;
-            product.Category = updatedProduct.Category;
             product.Supplier = updatedProduct.Supplier;
             product.Price = updatedProduct.Price;
             product.Quantity = updatedProduct.Quantity;

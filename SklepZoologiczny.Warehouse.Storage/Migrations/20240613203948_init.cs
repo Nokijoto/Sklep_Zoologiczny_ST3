@@ -56,26 +56,26 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    Supplier = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ParentId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    SupplierId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    SupplierId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CategorieId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Products_Categories_ParentId",
-                        column: x => x.ParentId,
+                        name: "FK_Products_Categories_CategorieId",
+                        column: x => x.CategorieId,
                         principalTable: "Categories",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Products_Suppliers_SupplierId",
                         column: x => x.SupplierId,
                         principalTable: "Suppliers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -84,9 +84,9 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                 column: "ParentCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_ParentId",
+                name: "IX_Products_CategorieId",
                 table: "Products",
-                column: "ParentId");
+                column: "CategorieId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_SupplierId",

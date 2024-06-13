@@ -13,4 +13,17 @@ public class WarehouseDbContext:DbContext
     public WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) : base(options)
     {
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Product>()
+            .HasOne(x => x.Categorie)
+            .WithMany(x => x.Products)
+            .HasForeignKey(x => x.CategorieId);
+
+        modelBuilder.Entity<Product>()
+            .HasOne(x => x.Supplier)
+            .WithMany(x => x.Products)
+            .HasForeignKey(x => x.SupplierId);
+    }
 }

@@ -17,8 +17,6 @@ namespace PetStore.Storage
         public DbSet<Entities.Warehouse.Product> Products { get; set; }
         public DbSet<Entities.Warehouse.Categorie> Categories { get; set; }
         public DbSet<Entities.Warehouse.Supplier> Suppliers { get; set; }
-        public DbSet<Entities.Warehouse.InventoryTransaction> InventoryTransactions { get; set; }
-        public DbSet<Entities.Warehouse.Employee> Employees { get; set; }
 
         public DbSet<Entities.Animals.Animal> Animals { get; set; }
         public DbSet<Entities.Animals.Specie> Species { get; set; }

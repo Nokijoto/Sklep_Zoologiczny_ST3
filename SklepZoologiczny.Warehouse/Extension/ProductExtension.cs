@@ -12,7 +12,6 @@ namespace SklepZoologiczny.Warehouse.Extension
                 Id = product.Id,
                 Name = product.Name,
                 Description = product.Description,
-                Category = product.Category,
                 Quantity = product.Quantity,
                 Price = product.Price
             };
@@ -29,7 +28,6 @@ namespace SklepZoologiczny.Warehouse.Extension
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
-                Category = product.Category,
                 Quantity = product.Quantity
             };
         }
