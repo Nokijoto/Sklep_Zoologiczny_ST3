@@ -1,3 +1,5 @@
 .vs
 .idea
 .github
+obj/
+bin/

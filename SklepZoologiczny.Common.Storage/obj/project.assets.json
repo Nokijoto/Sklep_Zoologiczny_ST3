@@ -8,23 +8,23 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Konzo\\.nuget\\packages\\": {},
+    "C:\\Users\\Rexma\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\SklepZoologiczny.Common.Storage.csproj",
+      "projectUniqueName": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\SklepZoologiczny.Common.Storage.csproj",
       "projectName": "SklepZoologiczny.Common.Storage",
-      "projectPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\SklepZoologiczny.Common.Storage.csproj",
-      "packagesPath": "C:\\Users\\Konzo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\obj\\",
+      "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\SklepZoologiczny.Common.Storage.csproj",
+      "packagesPath": "C:\\Users\\Rexma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.Storage\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Konzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rexma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -46,11 +46,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -72,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj": {}
+    "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj": {
+    "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj",
+        "projectUniqueName": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj",
         "projectName": "SklepZoologiczny.Common.CrossCutting",
-        "projectPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\Konzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Konzo\\Desktop\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\obj\\",
+        "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\SklepZoologiczny.Common.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\Rexma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Common.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Konzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rexma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -39,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -65,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

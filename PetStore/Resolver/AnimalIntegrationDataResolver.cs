@@ -52,7 +52,11 @@ namespace PetStore.Resolver
 
         public async Task<AnimalDto> CreateOrUpdateAnimals(AnimalDto dto)
         {
-            
+            // TODO
+            // Check if the animal already exists in the database
+            // If it does, update the existing record
+            // If it doesn't, create a new record
+
             var animal = new Animal
             {
                 Id = dto.Id,
