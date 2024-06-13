@@ -46,3 +46,5 @@ C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.Storage\
 C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.Storage\obj\Debug\net7.0\refint\SklepZoologiczny.Warehouse.Storage.dll
 C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.Storage\obj\Debug\net7.0\SklepZoologiczny.Warehouse.Storage.pdb
 C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.Storage\obj\Debug\net7.0\ref\SklepZoologiczny.Warehouse.Storage.dll
+C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.Storage\bin\Debug\net7.0\SklepZoologiczny.Warehouse.Storage.runtimeconfig.json
+C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse.Storage\obj\Debug\net7.0\SklepZoologiczny.Warehouse.Storage.genruntimeconfig.cache

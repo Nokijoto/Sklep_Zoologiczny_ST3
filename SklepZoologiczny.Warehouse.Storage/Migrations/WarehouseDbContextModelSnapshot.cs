@@ -46,54 +46,6 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Employee", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ContactInformation")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Employees");
-                });
-
-            modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.InventoryTransaction", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("EmployeeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("InventoryTransactions");
-                });
-
             modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -118,7 +70,7 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<string>("Quanitity")
+                    b.Property<string>("Quantity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -126,11 +78,67 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ParentId");
 
+                    b.HasIndex("SupplierId");
+
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Supplier", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Categorie", b =>
@@ -142,30 +150,15 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                     b.Navigation("ParentCategory");
                 });
 
-            modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.InventoryTransaction", b =>
-                {
-                    b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Employee", "Employee")
-                        .WithMany("InventoryTransactions")
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Employee");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Product", b =>
                 {
                     b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Categorie", null)
                         .WithMany("Products")
                         .HasForeignKey("ParentId");
+
+                    b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Supplier", null)
+                        .WithMany("Products")
+                        .HasForeignKey("SupplierId");
                 });
 
             modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Categorie", b =>
@@ -175,9 +168,9 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                     b.Navigation("Subcategories");
                 });
 
-            modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Employee", b =>
+            modelBuilder.Entity("SklepZoologiczny.Warehouse.Storage.Entities.Supplier", b =>
                 {
-                    b.Navigation("InventoryTransactions");
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

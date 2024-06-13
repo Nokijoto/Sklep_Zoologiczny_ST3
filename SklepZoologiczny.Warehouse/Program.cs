@@ -14,8 +14,6 @@ builder.Services.AddDbContext<WarehouseDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ICategoriesService, CategoriesService>();
 builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IInventoryTransactionService, InventoryTransactionService>();
-builder.Services.AddScoped<IEmployeService, EmployeService>();
 builder.Services.AddScoped<ISupplierService, SupplierService>();
 
 builder.Services.AddScoped<Seeder>();

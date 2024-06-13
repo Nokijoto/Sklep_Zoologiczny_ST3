@@ -81,8 +81,6 @@
 /Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Warehouse/obj/Debug/net7.0/SklepZoologiczny.Warehouse.pdb
 /Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Warehouse/obj/Debug/net7.0/SklepZoologiczny.Warehouse.genruntimeconfig.cache
 /Users/konrad/Desktop/Sklep_Zoologiczny_ST3/SklepZoologiczny.Warehouse/obj/Debug/net7.0/ref/SklepZoologiczny.Warehouse.dll
-C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\bin\Debug\net7.0\appsettings.Development.json
-C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\bin\Debug\net7.0\appsettings.json
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\bin\Debug\net7.0\SklepZoologiczny.Warehouse.exe
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\bin\Debug\net7.0\SklepZoologiczny.Warehouse.deps.json
 C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\bin\Debug\net7.0\SklepZoologiczny.Warehouse.runtimeconfig.json
@@ -247,3 +245,5 @@ C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\obj\Debu
 C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\obj\Debug\net7.0\SklepZoologiczny.Warehouse.pdb
 C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\obj\Debug\net7.0\SklepZoologiczny.Warehouse.genruntimeconfig.cache
 C:\Users\Konzo\Desktop\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\obj\Debug\net7.0\ref\SklepZoologiczny.Warehouse.dll
+C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Rexma\Desktop\Sklep_Zoologiczny_ST3\Sklep_Zoologiczny_ST3\SklepZoologiczny.Warehouse\bin\Debug\net7.0\appsettings.json
