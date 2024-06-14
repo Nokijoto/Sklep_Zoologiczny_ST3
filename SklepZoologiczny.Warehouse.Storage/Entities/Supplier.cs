@@ -30,5 +30,5 @@ public class Supplier: BaseEntity
     [MaxLength(255)]
     public string Country { get; set; }
 
-    public ICollection<Product> Products { get; set; }
+    public virtual ICollection<Product> Products { get; set; }
 }

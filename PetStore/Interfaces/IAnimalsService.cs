@@ -4,6 +4,8 @@ namespace PetStore.Interfaces
 {
     public interface IAnimalsService
     {
+
+
         Task<AnimalDto> GetAnimalByIdAsync(Guid specieId, Guid id);
         Task<ICollection<AnimalDto>> GetAllAnimalsAsync(Guid id);
 

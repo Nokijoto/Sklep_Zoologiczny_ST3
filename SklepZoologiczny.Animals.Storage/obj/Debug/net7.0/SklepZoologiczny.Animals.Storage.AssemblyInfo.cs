@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SklepZoologiczny.Animals.Storage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79eac46a9987c024a1411f8b3a8aaed4baa2fb42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SklepZoologiczny.Animals.Storage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SklepZoologiczny.Animals.Storage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

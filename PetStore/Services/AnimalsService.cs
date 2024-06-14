@@ -2,9 +2,11 @@
 using Microsoft.CodeAnalysis.Operations;
 using Microsoft.EntityFrameworkCore;
 using PetStore.CrossCutting.Dtos.Animals;
+using PetStore.Extensions;
 using PetStore.Interfaces;
 using PetStore.Resolver;
 using PetStore.Storage;
+using PetStore.Storage.Entities.Animals;
 
 namespace PetStore.Services
 {
@@ -22,62 +24,182 @@ namespace PetStore.Services
 
         public async Task<ICollection<AnimalDto>> GetAllAnimalsAsync(Guid id)
         {
-            if(_dbContext.Species.FirstOrDefault(x => x.Id == id) is null) // do poprawy nalezy go poprawić tak żeby sprawdzał czy wszystkie wartości są już w bazie danych
+            try
             {
-                await _animalResolver.GetAnimalAsync(id);
-            }
-            var animals = await _dbContext.Animals.Where(x => x.SpecieId == id).ToListAsync();
+                if (_dbContext.Animals != null && await _dbContext.Animals.AnyAsync())
+                {
+                    return await _dbContext.Animals.Select(s => new AnimalDto
+                    {
+                        Id = s.Id,
+                        Name = s.Name,
+                        Breed = s.Breed,
+                        Age = s.Age
+                    }).ToListAsync();
+                  
+                }
+                else
+                {
+                    List<AnimalDto> dataFromResolver = await _animalResolver.GetAnimalAsync(id);
 
-            return animals.Select(animal => new AnimalDto
+                    var animals = dataFromResolver.Select(s => new Animal
+                    {
+                        Id = s.Id,
+                        Name = s.Name
+                    }).ToList();
+
+                    await _dbContext.Animals.AddRangeAsync(animals);
+                    await _dbContext.SaveChangesAsync();
+
+                    return await _dbContext.Animals.Select(s => new AnimalDto
+                    {
+                        Id = s.Id,
+                        Name = s.Name,
+                        Breed = s.Breed,
+                        Age = s.Age
+                    }).ToListAsync();
+                }
+            }
+            catch (Exception ex)
             {
-                Id = animal.Id,
-                Name = animal.Name,
-                Breed = animal.Breed,
-                Age = animal.Age
-            }).ToList();
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         public async Task<AnimalDto> GetAnimalByIdAsync(Guid specieId, Guid id)
         {
-            var animalById= await _dbContext.Animals.FirstOrDefaultAsync(x => x.Id == id && x.SpecieId==specieId);
-            if (animalById is not null)
+            try
             {
-                return new AnimalDto
+                var animal = await _dbContext.Animals.FindAsync(id);
+
+                if (animal != null)
                 {
-                    Id = animalById.Id,
-                    Name = animalById.Name,
-                    Breed = animalById.Breed,
-                    Age=animalById.Age,
-                    Gender=animalById.Gender,
-                    Price=animalById.Price                    
-                };
+                    return new AnimalDto{
+                        Id = animal.Id,
+                        Name = animal.Name,
+                        Breed = animal.Breed,
+                        Age = animal.Age
+                    };
+                }
+                else
+                {
+                    var dataFromResolver = await _animalResolver.GetAnimalByIdAsync(specieId,id);
+
+                    if (dataFromResolver != null)
+                    {
+                        var newcategory = new Animal
+                        {
+                            Id = dataFromResolver.Id,
+                            Name = dataFromResolver.Name,
+                            Breed = dataFromResolver.Breed,
+                            Age = dataFromResolver.Age
+                        };
+                        _dbContext.Animals.Add(newcategory);
+                        await _dbContext.SaveChangesAsync();
+                        return new AnimalDto
+                        {
+                            Id = animal.Id,
+                            Name = animal.Name,
+                            Breed = animal.Breed,
+                            Age = animal.Age
+                        };
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
             }
-            return await _animalResolver.GetAnimalByIdAsync(specieId, id);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         public async Task<SpecieDto> GetSpecielByIdAsync(Guid id)
         {
-            var specielById= await _dbContext.Species.FirstOrDefaultAsync(x => x.Id == id);
-            if (specielById is not null)
+            try
             {
-                return new SpecieDto
+                var specie = await _dbContext.Species.FindAsync(id);
+
+                if (specie != null)
                 {
-                    Id = specielById.Id,
-                    Name = specielById.Name
-                };
+                    return new SpecieDto
+                    {
+                        Id = specie.Id,
+                        Name = specie.Name
+                    };
+                }
+                else
+                {
+                    var DtoFromResolver = await _resolver.GetSpeciesByIdAsync(id);
+
+                    if (DtoFromResolver != null)
+                    {
+                        var newspecie = new Specie
+                        {
+                            Id = DtoFromResolver.Id,
+                            Name = DtoFromResolver.Name
+                        };
+                        _dbContext.Species.Add(newspecie);
+                        await _dbContext.SaveChangesAsync();
+                        return new SpecieDto
+                        {
+                            Id = newspecie.Id,
+                            Name = newspecie.Name
+                        };
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
             }
-            return await _resolver.GetSpeciesByIdAsync(id);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         public async Task<IEnumerable<SpecieDto>> GetSpeciesAsync()
         {
-            await _resolver.GetAllSpeciesAsync();
-            var species = await _dbContext.Species.ToListAsync();
-            return species.Select(x => new SpecieDto
+            try
             {
-                Id = x.Id,
-                Name = x.Name
-            });
+                if (_dbContext.Species != null && await _dbContext.Species.AnyAsync())
+                {
+                    return await _dbContext.Species.Select(s => new SpecieDto
+                    {
+                        Id = s.Id,
+                        Name = s.Name
+                    }).ToListAsync();
+                }
+                else
+                {
+                    List<SpecieDto> dataFromResolver = await _resolver.GetAllSpeciesAsync();
+
+                    var species = dataFromResolver.Select(s => new Specie
+                    {
+                        Id = s.Id,
+                        Name = s.Name
+                    }).ToList();
+
+                    await _dbContext.Species.AddRangeAsync(species);
+                    await _dbContext.SaveChangesAsync();
+
+                    return await _dbContext.Species.Select(s => new  SpecieDto
+                    {
+                        Id = s.Id,
+                        Name = s.Name
+                    }).ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
     }
 }

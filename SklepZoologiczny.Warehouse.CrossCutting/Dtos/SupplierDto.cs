@@ -14,8 +14,7 @@ namespace SklepZoologiczny.Warehouse.CrossCutting.Dtos
         public string Email { get; set; }
 
         public string Phone { get; set; }
-
-        public string Address { get; set; }
+        public string Street { get; set; }
 
         public string City { get; set; }
 
@@ -25,6 +24,6 @@ namespace SklepZoologiczny.Warehouse.CrossCutting.Dtos
 
         public string Country { get; set; }
 
-        public ICollection<string> Products { get; set; } // Assuming you only need product names
+        public ICollection<string> Products { get; set; }
     }
 }

@@ -16,7 +16,7 @@ public class Categorie: BaseEntity
 
     public Categorie? ParentCategory { get; set; }
 
-    public virtual ICollection<Categorie> Subcategories { get; set; } = new List<Categorie>();
+    public virtual ICollection<Categorie>? Subcategories { get; set; }
 
     public virtual ICollection<Product>? Products { get; set; }
 }

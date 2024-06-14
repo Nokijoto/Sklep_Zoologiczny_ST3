@@ -20,6 +20,7 @@ namespace PetStore.Extensions
             services.AddScoped<SpecieIntegrationDataResolver>();
             services.AddScoped<AnimalIntegrationDataResolver>();
             services.AddScoped<SuppliersDataResolver>();
+            services.AddScoped<CategoriesDataResolver>();
             return services;
         }
     }

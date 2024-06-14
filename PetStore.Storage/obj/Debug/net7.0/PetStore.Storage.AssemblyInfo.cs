@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PetStore.Storage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79eac46a9987c024a1411f8b3a8aaed4baa2fb42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d222e85ae089b6b1d8190aef0165c062226dd9b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PetStore.Storage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PetStore.Storage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
