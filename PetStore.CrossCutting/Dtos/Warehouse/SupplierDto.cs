@@ -15,7 +15,7 @@ namespace PetStore.CrossCutting.Dtos.Warehouse
 
         public string Phone { get; set; }
 
-        public string Address { get; set; }
+        public string Street { get; set; }
 
         public string City { get; set; }
 
@@ -24,7 +24,9 @@ namespace PetStore.CrossCutting.Dtos.Warehouse
         public string ZipCode { get; set; }
 
         public string Country { get; set; }
+        public Guid ExternalId { get; set; }
+        public string ExternalSourceName { get; set; }
 
-        public ICollection<string> Products { get; set; } // Assuming you only need product names
+        public ICollection<string> Products { get; set; } 
     }
 }
