@@ -27,6 +27,9 @@ namespace PetStore.Storage.Entities.Warehouse
         [MaxLength(20)]
         public string ZipCode { get; set; }
 
+        public Guid ExternalId { get; set; }
+        public string ExternalSourceName { get; set; }
+
         [MaxLength(255)]
         public string Country { get; set; }
 

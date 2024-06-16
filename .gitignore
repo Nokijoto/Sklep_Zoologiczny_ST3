@@ -1,3 +1,8 @@
+# Ignorowanie plików 
 .vs
 .idea
 .github
+
+# Ignorowanie folderów bin i obj
+**/bin/
+**/obj/

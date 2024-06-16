@@ -17,10 +17,13 @@ namespace PetStore.Storage.Entities.Warehouse
         [ForeignKey("ParentCategoryId")]
         public Categorie? ParentCategory { get; set; }
 
-        public ICollection<Categorie> Subcategories { get; set; } = new List<Categorie>();
+        public ICollection<Categorie> Subcategories { get; set; } 
 
         [ForeignKey("ParentId")]
         public ICollection<Product>? Products { get; set; }
+
+        public Guid? ExternalId { get; set; }
+        public string? ExternalSourceName { get; set; }
 
     }
 }

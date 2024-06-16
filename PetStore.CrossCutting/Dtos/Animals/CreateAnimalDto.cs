@@ -1,6 +1,6 @@
-namespace SklepZoologiczny.Animals.CrossCutting.Dtos;
+namespace PetStore.CrossCutting.Dtos.Animals;
 
-public class CreateAnimalDto
+public class CreateAnimalDto: ExternalSource
 {
     public string Name { get; set; }
     public string Breed { get; set; }

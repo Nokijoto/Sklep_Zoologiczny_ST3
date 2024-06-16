@@ -1,18 +1,15 @@
-﻿using SklepZoologiczny.Animals.CrossCutting.Dtos;
+﻿using PetStore.CrossCutting.Dtos.Animals;
 
 namespace PetStore.Interfaces
 {
     public interface IAnimalsService
     {
-        Task<AnimalDto> GetAnimalsAsync();
-        Task<AnimalDto> GetAnimalByIdAsync(Guid id);
-        Task<AnimalDto> GetAnimalBySpecieIdAsync(Guid id);
-        Task<AnimalDto> GetAnimalsByName(string name);
-        Task<AnimalDto> GetAnimalsBySpecieName(string name);
 
 
-        Task<SpecieDto> GetSpeciesAsync();
-        Task<SpecieDto> GetSpecieByIdAsync(Guid id);
-        Task<SpecieDto> GetSpecieByName(string name);
+        Task<AnimalDto> GetAnimalByIdAsync(Guid specieId, Guid id);
+        Task<ICollection<AnimalDto>> GetAllAnimalsAsync(Guid id);
+
+        Task<IEnumerable<SpecieDto>> GetSpeciesAsync();
+        Task<SpecieDto> GetSpecielByIdAsync(Guid id);
     }
 }

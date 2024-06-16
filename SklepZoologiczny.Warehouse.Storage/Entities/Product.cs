@@ -7,14 +7,17 @@ using System.Threading.Tasks;
 
 namespace SklepZoologiczny.Warehouse.Storage.Entities
 {
-    public class Product :BaseEntity
+    public class Product : BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Category { get; set; }    
-        public string Quanitity { get; set; }   
-        public decimal Price {get; set; }
-        public string Supplier { get; set; }
-       
+        public int Quantity { get; set; }   
+        public int Price {get; set; }
+        public Guid SupplierId { get; set; }
+        public Guid CategorieId { get; set; }
+        public virtual Supplier Supplier { get; set; }
+        public virtual Categorie Categorie { get; set; }
+
+
     }
 }

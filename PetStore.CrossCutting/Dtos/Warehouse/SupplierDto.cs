@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetStore.CrossCutting.Dtos.Warehouse
 {
-    public class SupplierDto
+    public class SupplierDto : ExternalSource
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -15,7 +15,7 @@ namespace PetStore.CrossCutting.Dtos.Warehouse
 
         public string Phone { get; set; }
 
-        public string Address { get; set; }
+        public string Street { get; set; }
 
         public string City { get; set; }
 
@@ -25,6 +25,6 @@ namespace PetStore.CrossCutting.Dtos.Warehouse
 
         public string Country { get; set; }
 
-        public ICollection<string> Products { get; set; } // Assuming you only need product names
+
     }
 }

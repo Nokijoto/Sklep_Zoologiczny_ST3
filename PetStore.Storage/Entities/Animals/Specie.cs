@@ -10,7 +10,9 @@ namespace PetStore.Storage.Entities.Animals
     public class Specie : BaseEntity
     {
         public string Name { get; set; }
-
+        
+        public Guid ExternalId { get; set; }
+        public string ExternalSourceName { get; set; }
         public virtual ICollection<Animal> Animals { get; set; }
     }
 }
