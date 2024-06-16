@@ -1,7 +1,14 @@
-Feature: Get Species by ID
+Feature: Pobierz gatunek po ID
 
-  Scenario: Successfully retrieve a species by ID
-    Given the species ID is "1"
-    When I send a GET request to "/api/species/1"
-    Then the response status should be 200
-    And the response body should contain the details of the species
+  Scenario: Pobranie gatunku po ID
+    Given istnieje gatunek o następujących szczegółach:
+      | Id                                   | Name     |
+      | 123e4567-e89b-12d3-a456-426614174000 | Canidae  |
+    When żądam gatunku o ID "123e4567-e89b-12d3-a456-426614174000"
+    Then odpowiedź powinna być:
+      """
+      {
+        "Id": "123e4567-e89b-12d3-a456-426614174000",
+        "Name": "Canidae"
+      }
+      """

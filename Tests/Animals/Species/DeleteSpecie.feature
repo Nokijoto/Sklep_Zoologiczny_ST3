@@ -1,6 +1,8 @@
-Feature: Delete Species
+Feature: Usunięcie gatunku
 
-  Scenario: Successfully delete a species
-    Given the species ID is "1"
-    When I send a DELETE request to "/api/species/1"
-    Then the response status should be 204
+  Scenario: Usunięcie istniejącego gatunku
+    Given istnieje gatunek o następujących szczegółach:
+      | Id                                   | Name     |
+      | 123e4567-e89b-12d3-a456-426614174000 | Canidae  |
+    When usuwam gatunek o ID "123e4567-e89b-12d3-a456-426614174000"
+    Then gatunek o ID "123e4567-e89b-12d3-a456-426614174000" nie powinien już istnieć w systemie

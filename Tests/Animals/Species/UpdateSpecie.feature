@@ -1,10 +1,19 @@
-Feature: Update Species
+Feature: Aktualizacja gatunku
 
-  Scenario: Successfully update a species
-    Given the species ID is "1"
-    And the updated species details are:
-      | name  |
-      | Canine |
-    When I send a PUT request to "/api/species/1"
-    Then the response status should be 200
-    And the response body should contain the updated details of the species
+  Scenario: Aktualizacja szczegółów istniejącego gatunku
+    Given istnieje gatunek o następujących szczegółach:
+      | Id                                   | Name      |
+      | 123e4567-e89b-12d3-a456-426614174000 | Canidae   |
+    When aktualizuję gatunek o ID "123e4567-e89b-12d3-a456-426614174000" do:
+      """
+      {
+        "Name": "Canis"
+      }
+      """
+    Then gatunek o ID "123e4567-e89b-12d3-a456-426614174000" powinien mieć następujące szczegóły:
+      """
+      {
+        "Id": "123e4567-e89b-12d3-a456-426614174000",
+        "Name": "Canis"
+      }
+      """

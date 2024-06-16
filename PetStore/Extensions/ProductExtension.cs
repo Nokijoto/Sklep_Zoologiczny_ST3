@@ -12,9 +12,13 @@ namespace PetStore.Extensions
                 Id = product.Id,
                 Name = product.Name,
                 Description = product.Description,
-                Category = product.Category,
                 Quantity = product.Quantity,
-                Price = product.Price
+                Price = product.Price,
+                CategorieId = product.CategorieId,
+                SupplierId = product.SupplierId,
+                ExternalId = product.ExternalId,
+                ExternalSourceName = product.ExternalSourceName,
+                
             };
         }
     }
@@ -29,8 +33,11 @@ namespace PetStore.Extensions
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
-                Category = product.Category,
-                Quantity = product.Quantity
+                Quantity = product.Quantity,
+                SupplierId = product.SupplierId,
+                CategorieId = product.CategorieId,
+                ExternalId = product.ExternalId,
+                ExternalSourceName = product.ExternalSourceName,
             };
         }
     }

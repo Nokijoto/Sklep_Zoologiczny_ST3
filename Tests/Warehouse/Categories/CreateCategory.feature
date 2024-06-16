@@ -1,9 +1,18 @@
-Feature: Create Category
+Feature: Tworzenie kategorii
 
-  Scenario: Successfully create a category
-    Given the category details are:
-      | name        | description        | parentCategoryId |
-      | Electronics | Electronic devices | 1                |
-    When I send a POST request to "/api/categories"
-    Then the response status should be 201
-    And the response body should contain the category ID
+  Scenario: Dodanie nowej kategorii
+    Given następujące szczegóły kategorii:
+      | Name     | Description          | ParentCategoryId                     | ParentCategory |
+      | Karmy    | Karmy dla zwierząt   | 223e4567-e89b-12d3-a456-426614174001 | Zwierzęta       |
+    When tworzę nową kategorię z tymi szczegółami
+    Then odpowiedź powinna być:
+      """
+      {
+        "Id": "<generated-id>",
+        "Name": "Karmy",
+        "Description": "Karmy dla zwierząt",
+        "ParentCategoryId": "223e4567-e89b-12d3-a456-426614174001",
+        "ParentCategory": "Zwierzęta"
+      }
+      """
+    And kategoria o ID "<generated-id>" powinna istnieć w systemie

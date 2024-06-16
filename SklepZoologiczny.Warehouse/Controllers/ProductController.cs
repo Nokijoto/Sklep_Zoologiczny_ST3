@@ -4,6 +4,8 @@ using SklepZoologiczny.Warehouse.Storage;
 using Microsoft.EntityFrameworkCore;
 using SklepZoologiczny.Warehouse.Services;
 using SklepZoologiczny.Warehouse.Interfaces;
+using SklepZoologiczny.Warehouse.CrossCutting.Dtos;
+using SklepZoologiczny.Warehouse.Extension;
 
 namespace SklepZoologiczny.Warehouse.Controllers
 {
@@ -19,14 +21,14 @@ namespace SklepZoologiczny.Warehouse.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<List<ProductDto>>> GetProducts()
         {
             var products = await _productService.GetAllProductsAsync();
             return Ok(products);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(Guid id)
+        public async Task<ActionResult<ProductDto>> GetProduct(Guid id)
         {
             var product = await _productService.GetProductByIdAsync(id);
             if (product == null)
@@ -37,19 +39,29 @@ namespace SklepZoologiczny.Warehouse.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Product>> CreateProduct(Product product)
+        public async Task<ActionResult> CreateProduct(CreateProductDto product)
         {
-            var createdProduct = await _productService.CreateProductAsync(product);
-            return CreatedAtAction(nameof(GetProduct), new { id = createdProduct.Id }, createdProduct);
+           // return Ok(product.CategorieId);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await _productService.CreateProductAsync(product);
+            return Ok();
+            
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(Guid id, Product product)
+        public async Task<IActionResult> UpdateProduct(Guid id, CreateProductDto product)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 await _productService.UpdateProductAsync(id, product);
-                return NoContent();
+                return Ok();
             }
             catch (Exception)
             {
@@ -63,7 +75,7 @@ namespace SklepZoologiczny.Warehouse.Controllers
             try
             {
                 await _productService.DeleteProductAsync(id);
-                return NoContent();
+                return Ok();
             }
             catch (Exception)
             {

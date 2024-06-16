@@ -52,7 +52,8 @@ namespace SklepZoologiczny.Warehouse
                 Price = 100,
                 Quantity = 10,
                 CategorieId = categoryId ?? Guid.Empty,
-                SupplierId = supplierId ?? Guid.Empty
+                SupplierId = supplierId ?? Guid.Empty,
+                
             }
         };
         }
@@ -68,19 +69,7 @@ namespace SklepZoologiczny.Warehouse
                 Description = "TestCategoryDescription",
                 ParentCategory = null,
                 ParentCategoryId = null,
-                Subcategories = new List<Categorie>
-                {
-                    new Categorie()
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "SubCategory1",
-                        Description = "SubCategoryDescription1",
-                        ParentCategory = null,
-                        ParentCategoryId = null,
-                        Subcategories = new List<Categorie>(),
-                    }
-                },
-                Products = new List<Product>(),
+               
             }
         };
         }
@@ -100,7 +89,7 @@ namespace SklepZoologiczny.Warehouse
                 Phone = "123456789",
                 State = "Mazowieckie",
                 ZipCode = "00-000",
-                Products = new List<Product>(),
+                
             }
         };
         }

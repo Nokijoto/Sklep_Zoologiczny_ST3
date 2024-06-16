@@ -23,25 +23,37 @@ namespace SklepZoologiczny.Warehouse.Services
 
         }
 
-        public async Task<Categorie> GetCategoryByIdAsync(Guid id)
+        public async Task<CategoriesDto> GetCategoryByIdAsync(Guid id)
         {
             var category = await _context.Categories.FindAsync(id);
             if (category == null)
             {
                 throw new Exception("Category not found.");
             }
-            return category;
+            return category.ToDto();
         }
 
-        public async Task<CategoriesDto> CreateCategoryAsync(CategoriesDto category)
+        public async Task CreateCategoryAsync(CreateCategoriesDto category)
         {
+
+
+            if (category == null)
+            {
+                throw new ArgumentNullException(nameof(category));
+            }
             var newCategory = category.ToEntity();
-            _context.Categories.Add(newCategory);
-            await _context.SaveChangesAsync();
-            return newCategory.ToDto();
+            try
+            {
+                _context.Categories.Add(newCategory);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("An unexpected error occurred.", ex);
+            }
         }
 
-        public async Task<Categorie> UpdateCategoryAsync(Guid id, CategoriesDto updatedCategory)
+        public async Task UpdateCategoryAsync(Guid id, CreateCategoriesDto updatedCategory)
         {
             var category = await _context.Categories.FindAsync(id);
             if (category == null)
@@ -53,7 +65,6 @@ namespace SklepZoologiczny.Warehouse.Services
             category.ParentCategoryId = updatedCategory.ParentCategoryId;
 
             await _context.SaveChangesAsync();
-            return category;
         }
         public async Task DeleteCategoryAsync(Guid id)
         {

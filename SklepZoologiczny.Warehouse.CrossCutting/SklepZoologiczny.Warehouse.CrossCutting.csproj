@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SklepZoologiczny.Warehouse.Storage\SklepZoologiczny.Warehouse.Storage.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -20,10 +20,15 @@ namespace PetStore.Resolver
             var externalApiUrl = $"{EXTERNAL_API_BASE_URL}/{specieId}/animals";
             try
             {
-                var response = await _httpClient.GetAsync(EXTERNAL_API_BASE_URL);
+                var response = await _httpClient.GetAsync(externalApiUrl);
                 if (response.IsSuccessStatusCode)
                 {
                     var responseData = JsonConvert.DeserializeObject<List<AnimalDto>>(await response.Content.ReadAsStringAsync());
+                    foreach (var item in responseData)
+                    {
+                        item.ExternalSourceName = "Animals";
+                        item.ExternalId = item.Id;
+                    }
                     return responseData;
                 }
             }
@@ -42,6 +47,9 @@ namespace PetStore.Resolver
                 if (response.IsSuccessStatusCode)
                 {
                     var responseData = JsonConvert.DeserializeObject<AnimalDto>(await response.Content.ReadAsStringAsync());
+                    
+                        responseData.ExternalSourceName = "Animals";
+                        responseData.ExternalId = responseData.Id;
                     return responseData;
                 }
             }

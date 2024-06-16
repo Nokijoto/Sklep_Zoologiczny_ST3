@@ -136,7 +136,8 @@ namespace SklepZoologiczny.Warehouse.Storage.Migrations
                 {
                     b.HasOne("SklepZoologiczny.Warehouse.Storage.Entities.Categorie", "ParentCategory")
                         .WithMany("Subcategories")
-                        .HasForeignKey("ParentCategoryId");
+                        .HasForeignKey("ParentCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("ParentCategory");
                 });

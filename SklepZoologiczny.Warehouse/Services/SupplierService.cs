@@ -2,6 +2,8 @@
 using SklepZoologiczny.Warehouse.Storage;
 using Microsoft.EntityFrameworkCore;
 using SklepZoologiczny.Warehouse.Interfaces;
+using SklepZoologiczny.Warehouse.CrossCutting.Dtos;
+using SklepZoologiczny.Warehouse.Extension;
 
 namespace SklepZoologiczny.Warehouse.Services
 {
@@ -14,29 +16,28 @@ namespace SklepZoologiczny.Warehouse.Services
             _context = context;
         }
 
-        public async Task<List<Supplier>> GetAllSuppliersAsync()
+        public async Task<List<SupplierDto>> GetAllSuppliersAsync()
         {
-            return await _context.Suppliers.ToListAsync();
+            return await _context.Suppliers.Select(x=>x.ToDto()).ToListAsync();
         }
 
-        public async Task<Supplier> GetSupplierByIdAsync(Guid id)
+        public async Task<SupplierDto> GetSupplierByIdAsync(Guid id)
         {
             var supplier = await _context.Suppliers.FindAsync(id);
             if (supplier == null)
             {
                 throw new Exception("Supplier not found.");
             }
-            return supplier;
+            return supplier.ToDto();
         }
 
-        public async Task<Supplier> CreateSupplierAsync(Supplier supplier)
+        public async Task CreateSupplierAsync(CreateSupplierDto supplier)
         {
-            _context.Suppliers.Add(supplier);
+            _context.Suppliers.Add(supplier.ToEntity());
             await _context.SaveChangesAsync();
-            return supplier;
         }
 
-        public async Task<Supplier> UpdateSupplierAsync(Guid id, Supplier updatedSupplier)
+        public async Task UpdateSupplierAsync(Guid id, CreateSupplierDto updatedSupplier)
         {
             var supplier = await _context.Suppliers.FindAsync(id);
             if (supplier == null)
@@ -50,14 +51,13 @@ namespace SklepZoologiczny.Warehouse.Services
             supplier.Country = updatedSupplier.Country;
             supplier.State = updatedSupplier.State;
             supplier.Street = updatedSupplier.Street;
-            supplier.Products = updatedSupplier.Products;
             supplier.City = updatedSupplier.City;
             supplier.Phone = updatedSupplier.Phone;
             supplier.ZipCode = updatedSupplier.ZipCode;
+            //supplier.Products = (ICollection<Product>)updatedSupplier.Products;
 
 
             await _context.SaveChangesAsync();
-            return supplier;
         }
 
         public async Task DeleteSupplierAsync(Guid id)

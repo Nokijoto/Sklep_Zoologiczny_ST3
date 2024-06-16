@@ -11,7 +11,9 @@ namespace PetStore.Extensions
             {
                 Id = category.Id,
                 Name = category.Name,
-                ParentCategoryId = category.ParentCategoryId
+                ParentCategoryId = category.ParentCategoryId,
+                Description = category.Description,
+                
             };
         }
     }

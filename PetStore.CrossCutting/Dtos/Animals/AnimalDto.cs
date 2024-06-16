@@ -1,5 +1,5 @@
 namespace PetStore.CrossCutting.Dtos.Animals;
-public class AnimalDto
+public class AnimalDto : ExternalSource
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

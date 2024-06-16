@@ -1,10 +1,20 @@
-Feature: Create Animal
+Feature: Tworzenie zwierzęcia
 
-  Scenario: Successfully create an animal
-    Given the species ID is "1"
-    And the animal details are:
-      | name  | breed | age | gender | price |
-      | Fido  | Dog   | 3   | Male   | 500   |
-    When I send a POST request to "/api/species/1/animals"
-    Then the response status should be 201
-    And the response body should contain the animal ID
+  Scenario: Dodanie nowego zwierzęcia
+    Given następujące szczegóły zwierzęcia:
+      | Name     | Breed   | Age | Gender  | Price | SpecieId                            |
+      | Charlie  | Beagle  | 2   | Male    | 200   | 789e7890-e89b-12d3-a456-426614174333 |
+    When tworzę nowe zwierzę z tymi szczegółami
+    Then odpowiedź powinna być:
+      """
+      {
+        "Id": "<generated-id>",
+        "Name": "Charlie",
+        "Breed": "Beagle",
+        "Age": 2,
+        "Gender": "Male",
+        "Price": 200,
+        "SpecieId": "789e7890-e89b-12d3-a456-426614174333"
+      }
+      """
+    And zwierzę o ID "<generated-id>" powinno istnieć w systemie

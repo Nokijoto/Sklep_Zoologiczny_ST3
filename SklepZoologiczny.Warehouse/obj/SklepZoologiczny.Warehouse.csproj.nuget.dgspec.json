@@ -92,7 +92,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.Storage\\SklepZoologiczny.Warehouse.Storage.csproj": {
+                "projectPath": "C:\\Users\\Rexma\\Desktop\\Sklep_Zoologiczny_ST3\\Sklep_Zoologiczny_ST3\\SklepZoologiczny.Warehouse.Storage\\SklepZoologiczny.Warehouse.Storage.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -279,6 +283,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "Xunit.Gherkin.Quick": {
+              "target": "Package",
+              "version": "[4.5.0, )"
             }
           },
           "imports": [

@@ -22,57 +22,6 @@ namespace PetStore.Storage.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CategorieProduct", b =>
-                {
-                    b.Property<Guid>("ParentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ParentId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CategorieProduct");
-                });
-
-            modelBuilder.Entity("PetStore.CrossCutting.Dtos.Warehouse.ProductDto", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("ExternalId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ExternalSourceName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductDto");
-                });
-
             modelBuilder.Entity("PetStore.Storage.Entities.Animals.Animal", b =>
                 {
                     b.Property<Guid>("Id")
@@ -104,12 +53,17 @@ namespace PetStore.Storage.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("SpecieId")
+                    b.Property<Guid>("SpecieId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("SpecieId1")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("SpecieId");
+
+                    b.HasIndex("SpecieId1");
 
                     b.ToTable("Animals");
                 });
@@ -145,11 +99,10 @@ namespace PetStore.Storage.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ExternalId")
+                    b.Property<Guid?>("ExternalId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ExternalSourceName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -173,9 +126,8 @@ namespace PetStore.Storage.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("CategorieId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -192,17 +144,23 @@ namespace PetStore.Storage.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("ParentId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Supplier")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategorieId");
+
+                    b.HasIndex("SupplierId");
 
                     b.ToTable("Products");
                 });
@@ -265,41 +223,17 @@ namespace PetStore.Storage.Migrations
                     b.ToTable("Suppliers");
                 });
 
-            modelBuilder.Entity("ProductSupplier", b =>
-                {
-                    b.Property<Guid>("ProductsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("SuppliersId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ProductsId", "SuppliersId");
-
-                    b.HasIndex("SuppliersId");
-
-                    b.ToTable("ProductSupplier");
-                });
-
-            modelBuilder.Entity("CategorieProduct", b =>
-                {
-                    b.HasOne("PetStore.Storage.Entities.Warehouse.Categorie", null)
-                        .WithMany()
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PetStore.Storage.Entities.Warehouse.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("PetStore.Storage.Entities.Animals.Animal", b =>
                 {
                     b.HasOne("PetStore.Storage.Entities.Animals.Specie", "Specie")
+                        .WithMany()
+                        .HasForeignKey("SpecieId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PetStore.Storage.Entities.Animals.Specie", null)
                         .WithMany("Animals")
-                        .HasForeignKey("SpecieId");
+                        .HasForeignKey("SpecieId1");
 
                     b.Navigation("Specie");
                 });
@@ -308,24 +242,29 @@ namespace PetStore.Storage.Migrations
                 {
                     b.HasOne("PetStore.Storage.Entities.Warehouse.Categorie", "ParentCategory")
                         .WithMany("Subcategories")
-                        .HasForeignKey("ParentCategoryId");
+                        .HasForeignKey("ParentCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("ParentCategory");
                 });
 
-            modelBuilder.Entity("ProductSupplier", b =>
+            modelBuilder.Entity("PetStore.Storage.Entities.Warehouse.Product", b =>
                 {
-                    b.HasOne("PetStore.Storage.Entities.Warehouse.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
+                    b.HasOne("PetStore.Storage.Entities.Warehouse.Categorie", "Categorie")
+                        .WithMany("Products")
+                        .HasForeignKey("CategorieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PetStore.Storage.Entities.Warehouse.Supplier", null)
-                        .WithMany()
-                        .HasForeignKey("SuppliersId")
+                    b.HasOne("PetStore.Storage.Entities.Warehouse.Supplier", "Supplier")
+                        .WithMany("Products")
+                        .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Categorie");
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("PetStore.Storage.Entities.Animals.Specie", b =>
@@ -335,7 +274,14 @@ namespace PetStore.Storage.Migrations
 
             modelBuilder.Entity("PetStore.Storage.Entities.Warehouse.Categorie", b =>
                 {
+                    b.Navigation("Products");
+
                     b.Navigation("Subcategories");
+                });
+
+            modelBuilder.Entity("PetStore.Storage.Entities.Warehouse.Supplier", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

@@ -19,7 +19,9 @@ namespace PetStore.Extensions
                 State = suplier.State,
                 ZipCode = suplier.ZipCode,
                 Country = suplier.Country,
-                Products = suplier.Products.Select(p => p.Name).ToList()
+                ExternalSourceName = suplier.ExternalSourceName,
+                ExternalId = suplier.ExternalId,
+                
             };
         }
     }
@@ -38,7 +40,9 @@ namespace PetStore.Extensions
                 City = suplier.City,
                 State = suplier.State,
                 ZipCode = suplier.ZipCode,
-                Country = suplier.Country
+                Country = suplier.Country,
+                ExternalId = suplier.ExternalId,
+                ExternalSourceName = suplier.ExternalSourceName,
             };
         }
     }

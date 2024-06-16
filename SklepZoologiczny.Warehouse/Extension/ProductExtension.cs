@@ -13,7 +13,10 @@ namespace SklepZoologiczny.Warehouse.Extension
                 Name = product.Name,
                 Description = product.Description,
                 Quantity = product.Quantity,
-                Price = product.Price
+                Price = product.Price,
+                CategorieId = product.CategorieId,
+                SupplierId=product.SupplierId,
+
             };
         }
     }
@@ -28,8 +31,42 @@ namespace SklepZoologiczny.Warehouse.Extension
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
-                Quantity = product.Quantity
+                Quantity = product.Quantity,
+                SupplierId = product.SupplierId,
+                CategorieId = product.CategorieId,
             };
         }
     }
+
+    public static class CreateProductDtoExtension
+    {
+        public static Product ToEntity(this CreateProductDto product)
+        {
+            return new Product
+            {
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                Quantity = product.Quantity,
+                Id = product.Id,
+                SupplierId = product.SupplierId,
+                CategorieId = product.CategorieId,
+                
+            };
+        }
+        public static ProductDto ProductDto(this CreateProductDto product)
+        {
+            return new ProductDto
+            {
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                Quantity = product.Quantity,
+                CategorieId = product.CategorieId,
+                SupplierId = product.SupplierId,
+                Id= product.Id
+            };
+        }
+    }
+
 }

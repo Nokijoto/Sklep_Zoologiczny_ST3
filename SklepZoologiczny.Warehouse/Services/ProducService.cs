@@ -2,6 +2,8 @@
 using SklepZoologiczny.Warehouse.Storage;
 using Microsoft.EntityFrameworkCore;
 using SklepZoologiczny.Warehouse.Interfaces;
+using SklepZoologiczny.Warehouse.CrossCutting.Dtos;
+using SklepZoologiczny.Warehouse.Extension;
 
 namespace SklepZoologiczny.Warehouse.Services
 {
@@ -14,30 +16,39 @@ namespace SklepZoologiczny.Warehouse.Services
             _context = context;
         }
 
-        public async Task<List<Product>> GetAllProductsAsync()
+        public async Task<List<ProductDto>> GetAllProductsAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Select(x=>x.ToDto()).ToListAsync();
         }
 
-        public async Task<Product> GetProductByIdAsync(Guid id)
+        public async Task<ProductDto> GetProductByIdAsync(Guid id)
         {
             var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
                 throw new Exception("Product not found.");
             }
-            return product;
+            return product.ToDto();
         }
     
 
-        public async Task<Product> CreateProductAsync(Product product)
+        public async Task CreateProductAsync(CreateProductDto product)
         {
-            _context.Products.Add(product);
+            
+            var categoryExists = await _context.Categories.AnyAsync(c => c.Id == product.CategorieId);
+            
+            if (!categoryExists)
+            {
+            throw new ArgumentException($"Invalid CategoryId specified. Id given: {product.CategorieId}");
+            }
+
+            var productEntity = product.ToEntity();
+            _context.Products.Add(productEntity);
             await _context.SaveChangesAsync();
-            return product;
+
         }
 
-        public async Task<Product> UpdateProductAsync(Guid id, Product updatedProduct)
+        public async Task UpdateProductAsync(Guid id, CreateProductDto updatedProduct)
         {
             var product = await _context.Products.FindAsync(id);
             if (product == null)
@@ -46,12 +57,11 @@ namespace SklepZoologiczny.Warehouse.Services
             }
 
             product.Name = updatedProduct.Name;
-            product.Supplier = updatedProduct.Supplier;
+            product.Description = updatedProduct.Description;
+            product.Price = updatedProduct.Price;
             product.Price = updatedProduct.Price;
             product.Quantity = updatedProduct.Quantity;
-
             await _context.SaveChangesAsync();
-            return product;
         }
 
         public async Task DeleteProductAsync(Guid id)

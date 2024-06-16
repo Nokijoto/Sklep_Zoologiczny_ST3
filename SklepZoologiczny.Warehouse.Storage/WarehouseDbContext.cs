@@ -25,5 +25,11 @@ public class WarehouseDbContext:DbContext
             .HasOne(x => x.Supplier)
             .WithMany(x => x.Products)
             .HasForeignKey(x => x.SupplierId);
+
+        modelBuilder.Entity<Categorie>()
+        .HasOne(c => c.ParentCategory)
+        .WithMany(c => c.Subcategories)
+        .HasForeignKey(c => c.ParentCategoryId)
+        .OnDelete(DeleteBehavior.Restrict);
     }
 }

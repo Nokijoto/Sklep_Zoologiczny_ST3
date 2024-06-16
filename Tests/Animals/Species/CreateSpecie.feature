@@ -1,9 +1,15 @@
-Feature: Create Species
+Feature: Tworzenie gatunku
 
-  Scenario: Successfully create a species
-    Given the species details are:
-      | name  |
-      | Canine |
-    When I send a POST request to "/api/species"
-    Then the response status should be 201
-    And the response body should contain the species ID
+  Scenario: Dodanie nowego gatunku
+    Given następujące szczegóły gatunku:
+      | Name     |
+      | Ursidae  |
+    When tworzę nowy gatunek z tymi szczegółami
+    Then odpowiedź powinna być:
+      """
+      {
+        "Id": "<generated-id>",
+        "Name": "Ursidae"
+      }
+      """
+    And gatunek o ID "<generated-id>" powinien istnieć w systemie

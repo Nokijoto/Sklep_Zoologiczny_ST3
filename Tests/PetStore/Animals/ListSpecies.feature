@@ -1,6 +1,21 @@
-Feature: List Species
+Feature: Lista gatunków
 
-  Scenario: Successfully retrieve list of species
-    When I send a GET request to "/api/Species"
-    Then the response status should be 200
-    And the response body should contain a list of species
+  Scenario: Pobranie listy gatunków
+    Given istnieją następujące gatunki:
+      | Id                                   | Name      |
+      | 123e4567-e89b-12d3-a456-426614174000 | Canidae   |
+      | 223e4567-e89b-12d3-a456-426614174001 | Felidae   |
+    When żądam listy gatunków
+    Then odpowiedź powinna być:
+      """
+      [
+        {
+          "Id": "123e4567-e89b-12d3-a456-426614174000",
+          "Name": "Canidae"
+        },
+        {
+          "Id": "223e4567-e89b-12d3-a456-426614174001",
+          "Name": "Felidae"
+        }
+      ]
+      """

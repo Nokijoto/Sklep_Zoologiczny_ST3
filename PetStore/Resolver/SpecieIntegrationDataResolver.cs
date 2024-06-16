@@ -24,6 +24,8 @@ namespace PetStore.Resolver
                 if (response.IsSuccessStatusCode)
                 {
                     var responseData = JsonConvert.DeserializeObject<SpecieDto>(await response.Content.ReadAsStringAsync());
+                    responseData.ExternalSourceName = "Animals";
+                    responseData.ExternalId = responseData.Id;
                     return responseData;
                 }
             }
@@ -42,6 +44,11 @@ namespace PetStore.Resolver
                 if (response.IsSuccessStatusCode)
                 {
                     var responseData = JsonConvert.DeserializeObject<List<SpecieDto>>(await response.Content.ReadAsStringAsync());
+                    foreach (var item in responseData)
+                    {
+                        item.ExternalSourceName = "Animals";
+                        item.ExternalId = item.Id;
+                    }
                     return responseData;
                 }
             }

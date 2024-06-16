@@ -23,7 +23,6 @@ namespace SklepZoologiczny.Warehouse.CrossCutting.Dtos
         public string ZipCode { get; set; }
 
         public string Country { get; set; }
-
-        public ICollection<string> Products { get; set; }
+        
     }
 }

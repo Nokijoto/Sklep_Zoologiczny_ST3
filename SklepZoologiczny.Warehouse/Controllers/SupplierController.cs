@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SklepZoologiczny.Warehouse.CrossCutting.Dtos;
 using SklepZoologiczny.Warehouse.Interfaces;
 using SklepZoologiczny.Warehouse.Services;
 using SklepZoologiczny.Warehouse.Storage.Entities;
@@ -17,14 +18,14 @@ namespace SklepZoologiczny.Warehouse.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Supplier>>> GetSuppliers()
+        public async Task<ActionResult<List<CreateSupplierDto>>> GetSuppliers()
         {
             var suppliers = await _supplierService.GetAllSuppliersAsync();
             return Ok(suppliers);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Supplier>> GetSupplier(Guid id)
+        public async Task<ActionResult<SupplierDto>> GetSupplier(Guid id)
         {
             var supplier = await _supplierService.GetSupplierByIdAsync(id);
             if (supplier == null)
@@ -35,23 +36,31 @@ namespace SklepZoologiczny.Warehouse.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Supplier>> CreateSupplier(Supplier supplier)
+        public async Task<ActionResult<CreateSupplierDto>> CreateSupplier(CreateSupplierDto supplier)
         {
-            var createdSupplier = await _supplierService.CreateSupplierAsync(supplier);
-            return CreatedAtAction(nameof(GetSupplier), new { id = createdSupplier.Id }, createdSupplier);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await _supplierService.CreateSupplierAsync(supplier);
+            return Ok();
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateSupplier(Guid id, Supplier supplier)
+        public async Task<IActionResult> UpdateSupplier(Guid id, CreateSupplierDto supplier)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 await _supplierService.UpdateSupplierAsync(id, supplier);
-                return NoContent();
+                return Ok();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return NotFound();
+                return BadRequest(e.Message);
             }
         }
 
@@ -61,11 +70,11 @@ namespace SklepZoologiczny.Warehouse.Controllers
             try
             {
                 await _supplierService.DeleteSupplierAsync(id);
-                return NoContent();
+                return Ok();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return NotFound();
+                return BadRequest(e.Message);
             }
         }
     }

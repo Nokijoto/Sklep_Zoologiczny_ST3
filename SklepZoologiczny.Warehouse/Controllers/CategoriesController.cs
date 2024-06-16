@@ -4,6 +4,7 @@ using SklepZoologiczny.Warehouse.Interfaces;
 using SklepZoologiczny.Warehouse.Services;
 using SklepZoologiczny.Warehouse.Storage;
 using SklepZoologiczny.Warehouse.Storage.Entities;
+using System.Linq.Expressions;
 
 namespace SklepZoologiczny.Warehouse.Controllers
 {
@@ -37,23 +38,41 @@ namespace SklepZoologiczny.Warehouse.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<CategoriesDto>> CreateCategory(CategoriesDto category)
+        public async Task<ActionResult> CreateCategory(CreateCategoriesDto category)
         {
-            var createdCategory = await _categoryService.CreateCategoryAsync(category);
-            return CreatedAtAction(nameof(GetCategory), new { id = createdCategory.Id }, createdCategory);
+
+            try
+            {
+                if(!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                await _categoryService.CreateCategoryAsync(category);
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory(Guid id, CategoriesDto category)
+        public async Task<IActionResult> UpdateCategory(Guid id, CreateCategoriesDto category)
         {
             try
             {
+                if(!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
                 await _categoryService.UpdateCategoryAsync(id, category);
-                return NoContent();
+                return Ok();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return NotFound();
+                return BadRequest(e.Message);
             }
         }
 
@@ -63,11 +82,11 @@ namespace SklepZoologiczny.Warehouse.Controllers
             try
             {
                 await _categoryService.DeleteCategoryAsync(id);
-                return NoContent();
+                return Ok();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return NotFound();
+                return BadRequest(e.Message);
             }
         }
     }

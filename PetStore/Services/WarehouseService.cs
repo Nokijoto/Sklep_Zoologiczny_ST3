@@ -154,7 +154,7 @@ namespace PetStore.Services
         {
             try
             {
-                var products = await _dbContext.Products.Where(p => p.Category == categoryId.ToString()).ToListAsync();
+                var products = await _dbContext.Products.Where(p => p.CategorieId == categoryId).ToListAsync();
                 if(products!=null)
                 {
                     return products.Select(p => p.ToDto()).ToList();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Operations;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol;
 using PetStore.CrossCutting.Dtos.Animals;
 using PetStore.Extensions;
 using PetStore.Interfaces;
@@ -33,29 +34,50 @@ namespace PetStore.Services
                         Id = s.Id,
                         Name = s.Name,
                         Breed = s.Breed,
-                        Age = s.Age
+                        Age = s.Age,
+                        ExternalId = s.ExternalId,
+                        ExternalSourceName = s.ExternalSourceName,
+                        Gender = s.Gender,
+                        SpecieId = s.SpecieId,
+                        Price = s.Price,
+                        
                     }).ToListAsync();
                   
                 }
                 else
                 {
                     List<AnimalDto> dataFromResolver = await _animalResolver.GetAnimalAsync(id);
-
+                   
                     var animals = dataFromResolver.Select(s => new Animal
                     {
                         Id = s.Id,
-                        Name = s.Name
+                        Name = s.Name,
+                        Age = s.Age,
+                        Breed = s.Breed,
+                        ExternalId = s.ExternalId,
+                        ExternalSourceName = s.ExternalSourceName,
+                        Gender = s.Gender,
+                        Price = s.Price,
+                        SpecieId = s.SpecieId??Guid.Empty,
+
+
+
                     }).ToList();
 
                     await _dbContext.Animals.AddRangeAsync(animals);
                     await _dbContext.SaveChangesAsync();
-
                     return await _dbContext.Animals.Select(s => new AnimalDto
                     {
                         Id = s.Id,
                         Name = s.Name,
                         Breed = s.Breed,
-                        Age = s.Age
+                        Age = s.Age,
+                        Price = s.Price,
+                        ExternalId = s.ExternalId,
+                        ExternalSourceName = s.ExternalSourceName,
+                        Gender = s.Gender,
+                        SpecieId = s.SpecieId,
+                        
                     }).ToListAsync();
                 }
             }

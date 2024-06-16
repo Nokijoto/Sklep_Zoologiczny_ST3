@@ -1,6 +1,8 @@
-Feature: Delete Category
+Feature: Usunięcie kategorii
 
-  Scenario: Successfully delete a category
-    Given the category ID is "1"
-    When I send a DELETE request to "/api/categories/1"
-    Then the response status should be 204
+  Scenario: Usunięcie istniejącej kategorii
+    Given istnieje kategoria o następujących szczegółach:
+      | Id                                   | Name      | Description           | ParentCategoryId                     | ParentCategory |
+      | 123e4567-e89b-12d3-a456-426614174000 | Akcesoria | Akcesoria dla zwierząt | 223e4567-e89b-12d3-a456-426614174001 | Zwierzęta       |
+    When usuwam kategorię o ID "123e4567-e89b-12d3-a456-426614174000"
+    Then kategoria o ID "123e4567-e89b-12d3-a456-426614174000" nie powinna już istnieć w systemie
