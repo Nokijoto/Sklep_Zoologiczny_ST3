@@ -15,10 +15,10 @@ namespace PetStore.CrossCutting.Dtos.Warehouse
 
         public Guid? ParentCategoryId { get; set; }
 
-        public string? ParentCategory { get; set; } // Assuming it's the name of the parent category
+        public string? ParentCategory { get; set; } 
 
-        public ICollection<string>? Subcategories { get; set; } = new List<string>(); // Assuming Categories is a collection of strings representing category names
+        public ICollection<string>? Subcategories { get; set; } = new List<string>(); 
 
-        public ICollection<ProductDto>? Products { get; set; } // Assuming ProductDTO is used as the DTO for the Product class
+        public ICollection<ProductDto>? Products { get; set; }
     }
 }

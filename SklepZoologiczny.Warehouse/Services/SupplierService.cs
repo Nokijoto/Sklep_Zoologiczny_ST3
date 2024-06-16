@@ -54,7 +54,6 @@ namespace SklepZoologiczny.Warehouse.Services
             supplier.City = updatedSupplier.City;
             supplier.Phone = updatedSupplier.Phone;
             supplier.ZipCode = updatedSupplier.ZipCode;
-            //supplier.Products = (ICollection<Product>)updatedSupplier.Products;
 
 
             await _context.SaveChangesAsync();

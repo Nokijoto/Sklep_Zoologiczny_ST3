@@ -134,7 +134,7 @@ System zarządzania zwierzętami i magazynem składający się z dwóch mikroser
 
 ## 5. Diagram UML / Przypadków Użycia
 
-
+![img.png](DiagramPrzypadkowUzycia.png)
 ## 6. Opis intefejsu Użytkownika
 
 
@@ -428,3 +428,6 @@ Feature: Aktualizacja dostawcy
 
 
 ## 9. Literatura
+1.	"Building Microservices: Designing Fine-Grained Systems" - Sam Newman
+2.	"Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems" - Martin Kleppmann
+3.	"Microservices Architecture: Patterns and Best Practices" - Martin Fowler 
