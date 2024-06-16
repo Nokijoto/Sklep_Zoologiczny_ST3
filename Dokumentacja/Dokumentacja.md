@@ -35,11 +35,10 @@ System zarządzania zwierzętami i magazynem składający się z dwóch mikroser
     - Integracja z zewnętrznym API do pobierania danych o zwierzętach.
     - Implementacja metod do pobierania listy zwierząt oraz szczegółowych informacji o zwierzęciu.
 - **Dokumentacja**:
-    - Diagram UML dla klasy `AnimalIntegrationDataResolver` oraz `ProductIntegrationDataResolver`.
+    - Diagram UML.
     - Diagram przypadków użycia.
     - Opis interfejsu użytkownika.
     - Opis backendu.
-    - Diagram UML dla klasy `AnimalIntegrationDataResolver` oraz `ProductIntegrationDataResolver`.
 #### Wspólnie
 - **Resolver**:
     - Implementacja klasy `AnimalIntegrationDataResolver` do pobierania danych o zwierzętach z zewnętrznego API.

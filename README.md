@@ -11,5 +11,5 @@ Dokumentacja projektu znajduje się w folderze [Dokumentacja](Dokumentacja).
 
 # 3. Testy jednostkowe
 
-Testy jednostkowe znajdują się w folderze [Tests](Tests).
+Testy znajdują się w folderze [Tests](Tests).
 
